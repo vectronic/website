@@ -1,0 +1,27 @@
+title = "vectronic"
+baseURL = "https://vectronic.io/"
+languageCode = "en-gb"
+enableRobotsTXT = true
+theme = "vectronic"
+sectionPagesMenu = "global"
+paginate = 2
+
+[taxonomies]
+    tag = "tags"
+
+[params]
+    name = "vectronic"
+    description = ""
+
+[menu]
+    [[menu.global]]
+    identifier = "tags"
+    name       = "Tags"
+    url        = "/tags/"
+    weight     = 0
+
+    [[menu.global]]
+    identifier = "archives"
+    name       = "Archives"
+    url        = "/archives/"
+    weight     = 1

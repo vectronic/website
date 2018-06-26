@@ -1,0 +1,10 @@
+{{ define "main" }}
+    <div class="container-fluid content">
+        {{ partial "page-details.html" . }}
+        <div class="row justify-content-center content-body">
+            <div class="offset-1 col-11 col-lg-8 col-xl-8">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+{{ end }}

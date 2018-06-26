@@ -1,0 +1,6 @@
+{{ define "main" }}
+    {{ .Scratch.Set "taxonomyName" "tags" }}
+    {{ .Scratch.Set "taxonomy" .Site.Taxonomies.tags }}
+    {{ partial "sub-nav.html" . }}
+    {{ partial "posts.html" . }}
+{{ end }}

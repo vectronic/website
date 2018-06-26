@@ -1,0 +1,32 @@
+<div class="container-fluid global-nav">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-9 col-xl-9">
+            <nav class="navbar navbar-expand-sm p-0">
+                <a class="navbar-brand" href="/">
+                    <img class="brand" src="/assets/img/brand.png" alt="vectronic">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+
+                        {{ $currentNode := . }}
+                        {{ range first 1 (sort (where .Site.Menus.global "Name" "ne" "Posts") "Weight") }}
+                            <li class="nav-item">
+                                <a class="nav-link{{if or ($currentNode.IsMenuCurrent "global" .) ($currentNode.HasMenuCurrent "global" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a>
+                            </li>
+                        {{ end }}
+
+                        {{ $currentNode := . }}
+                        {{ range last (sub (len .Site.Menus.global) 2) (sort (where .Site.Menus.global "Name" "ne" "Posts") "Weight") }}
+                            <li class="nav-item pl-4">
+                                <a class="nav-link{{if or ($currentNode.IsMenuCurrent "global" .) ($currentNode.HasMenuCurrent "global" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a>
+                            </li>
+                        {{ end }}
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>

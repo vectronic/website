@@ -1,0 +1,239 @@
+body {
+    font-family: 'IBM Plex Mono Light', monospace;
+    font-size: small;
+    background-color: #000000;
+    color: #c3c6cc;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.global-nav {
+    padding-left: 1.5em;
+    padding-top: 0em;
+    padding-bottom: 0em;
+}
+
+.global-nav .navbar-toggler {
+    padding-right: 0px;
+}
+
+.global-nav ul {
+    text-align: right;
+}
+
+.global-nav a {
+    color: #ffffff;
+}
+
+.global-nav a.active, .global-nav a:hover  {
+    text-decoration: underline;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+img.brand {
+    height: 70px;
+    margin-left: -0.4em;
+}
+
+.sub-nav {
+    padding-left: 1.5em;
+    background-color: #c3c6cc;
+    color: #000000;
+    line-height: 8px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.sub-nav a {
+    color: #000000;
+}
+
+.sub-nav a.active, .sub-nav a:hover  {
+    text-decoration: underline;
+}
+
+.page-nav {
+    padding-left: 2.5em;
+    background-color: #c3c6cc;
+    color: #000000;
+}
+
+.page-nav {
+    padding-top: 1em;
+    padding-bottom: 0em;
+}
+
+.page-nav .page-link {
+    color: #000000;
+    padding: 0.25rem 0.5rem;
+}
+
+.page-nav .page-item.active .page-link {
+    background-color: #6e6c76;
+    border-color: #6e6c76;
+}
+
+.page-nav .page-item .page-link:hover {
+    color: #e3170a;
+}
+
+.page-nav .page-item.active .page-link:hover {
+    color: #ffffff;
+}
+
+.page-item:last-child .page-link, .page-item:first-child .page-link {
+    border-radius: 0px;
+}
+
+.content {
+    background-color: #ffffff;
+    color: #000000;
+    min-height: 100px;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.content label {
+    font-family: 'IBM Plex Mono Light', monospace;
+    font-size: small;
+
+}
+
+.content .form-control {
+    font-size: small;
+}
+
+.content small.text-muted {
+    font-family: 'IBM Plex Mono Light', monospace;
+}
+
+.content a {
+    text-decoration: underline;
+    color: #000000;
+}
+
+.content a:hover {
+    text-decoration: underline;
+    color: #e3170a;
+}
+
+.content .btn-primary {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #e9ecef;
+    font-family: 'IBM Plex Mono Light', monospace;
+    font-weight: normal;
+    font-size: small;
+}
+
+.content .btn-primary:hover {
+    background-color: #e9ecef;
+    color: #e3170a;
+}
+
+.content-divider div {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.content-divider:first-child div {
+    display: none;
+}
+
+.content-date {
+    vertical-align: top;
+    line-height: 12px;
+    padding-left: 1em;
+    font-size: small;
+}
+
+.content-title a {
+    line-height: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000000;
+    vertical-align: text-top;
+}
+
+.content-title a:hover {
+    text-decoration: none;
+    color: #e3170a;
+}
+
+.content-tags {
+    top: -5px;
+    font-size: small;
+}
+
+.content-tags a.tag {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    font-weight: normal;
+}
+
+.content-tags a.tag:hover {
+     background-color: #e9ecef;
+}
+
+.content-body  {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.content-more  {
+    padding-top: 0.5em;
+}
+
+.footer {
+    padding: 1.5em;
+}
+
+.footer h1 {
+    font-size: small;
+    color: #ffffff;
+    padding-bottom: 0.8em;
+    border-bottom: 1px solid #c3c6cc;
+}
+
+.footer a {
+    color: #c3c6cc;
+}
+
+.footer a:hover {
+    color: #ffffff;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.footer li {
+    padding-bottom: 0.5em;
+}
+
+.copyright {
+    color: #6e6c76;
+}
+
+.cc-window {
+    font-family: 'IBM Plex Mono Light', monospace;
+    font-size: small;
+    line-height: 1.3em;
+}
+
+.cc-banner.cc-theme-edgeless .cc-btn {
+    padding: 0.6em;
+    min-width: 80px;
+}
+
+@media screen and (max-width: 414px) and (orientation: portrait), screen and (max-width: 736px) and (orientation: landscape) {
+    .cc-window .cc-message {
+        margin: 0.5em;
+    }
+}

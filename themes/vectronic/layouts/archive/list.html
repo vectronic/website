@@ -1,0 +1,40 @@
+{{ define "main" }}
+    {{ $scratch := .Scratch }}
+    <div class="container-fluid sub-nav sticky-top">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-9 col-xl-9 p-0">
+                <nav class="navbar navbar-expand p-0">
+                    <ul class="navbar-nav flex-wrap">
+                        <li class="nav-item pr-2">
+                            <a class="nav-link {{ if eq .Dir "archives/" }} active {{ end }}" href="/archives/">All</a>
+                        </li>
+                        <li class="nav-item nav-link pr-3">|</li>
+                        {{ $dir := .Dir }}
+                        {{ with .Site.GetPage "section" "posts" }}
+                            <!-- Mon Jan 2 15:04:05 -0700 MST 2006 -->
+                            {{ range .Data.Pages.GroupByDate "2006" }}
+                                <li class="nav-item pr-2">
+                                    <a class="nav-link
+                                    {{ if (eq $dir (printf "archives/%s/" .Key)) }}
+                                        {{ $scratch.Set "filter" .Key}}
+                                        active
+                                    {{ end }}
+                                    " href="/archives/{{ .Key }}">{{ .Key }}</a>
+                                </li>
+                            {{ end }}
+                        {{ end }}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    {{ .Scratch.Set "pages" (where (where .Site.Pages "Section" "posts") ".IsPage" true) }}
+    {{ $filter := (.Scratch.Get "filter") }}
+    {{ if ne $filter nil }}
+        {{ .Scratch.Set "pages" (where (.Scratch.Get "pages") "Date.Year" (int $filter)) }}
+    {{ end }}
+    {{ partial "posts.html" . }}
+{{ end }}
+
+
+
