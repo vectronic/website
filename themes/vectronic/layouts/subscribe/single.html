@@ -1,14 +1,15 @@
 {{ define "main" }}
 <div class="container-fluid content">
-    <div class="row justify-content-center content-body">
+    <div class="row justify-content-center content-title">
         <div class="col-12 col-lg-9 col-xl-9 pb-4">
             <h4>Subscribe</h4>
-            <label>Subscribe to receive an email when a new blog entry is posted.</label>
+            Subscribe to receive an email when a new blog entry is posted.
         </div>
     </div>
-    <form class="needs-validation" novalidate name="subscribe" method="POST" netlify-honeypot="callsign" netlify >
+    <form class="needs-validation" novalidate name="subscribe" method="POST" action="/thanks" netlify-honeypot="callsign" netlify>
         <div class="row justify-content-center content-body">
             <div class="col-4 col-lg-3 col-xl-3">
+                <input class="d-none" name="callsign"/>
                 <label for="validationCustom01">First Name</label>
                 <input type="text" class="form-control" id="validationCustom01" required>
                 <div class="invalid-feedback">Please provide a first name.</div>

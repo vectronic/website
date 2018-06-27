@@ -107,6 +107,7 @@ img.brand {
 
 .content .form-control {
     font-size: small;
+    border-color: #e9ecef;
 }
 
 .content small.text-muted {
@@ -155,7 +156,6 @@ img.brand {
 
 .content-title a {
     line-height: 14px;
-    font-weight: 600;
     text-decoration: none;
     color: #000000;
     vertical-align: text-top;
@@ -236,4 +236,69 @@ img.brand {
     .cc-window .cc-message {
         margin: 0.5em;
     }
+}
+
+.resp-sharing-button__link,
+.resp-sharing-button__icon {
+    display: inline-block
+}
+
+.resp-sharing-button__link {
+    text-decoration: none;
+}
+
+.resp-sharing-button {
+    border-radius: 5px;
+    transition: 25ms ease-out;
+    padding: 0.3em 0.5em;
+    border: 1px solid #e9ecef;
+}
+
+.resp-sharing-button:hover,
+.resp-sharing-button:active {
+    background-color: #e9ecef;
+}
+
+.resp-sharing-button__icon svg {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.4em;
+    vertical-align: top
+}
+
+.resp-sharing-button--small svg {
+    margin: 0;
+    vertical-align: middle
+}
+
+.resp-sharing-button__icon--solid {
+    stroke: none;
+}
+
+.resp-sharing-button--email {
+    fill: #777;
+}
+
+.resp-sharing-button--facebook {
+    fill: #3b5998;
+}
+
+.resp-sharing-button--twitter {
+    fill: #55acee;
+}
+
+.resp-sharing-button--google {
+    fill: #dd4b39;
+}
+
+.resp-sharing-button--reddit {
+    fill: #5f99cf;
+}
+
+.resp-sharing-button--linkedin {
+    fill: #0077b5;
+}
+
+.resp-sharing-button--hackernews {
+    fill: #ff6600;
 }
