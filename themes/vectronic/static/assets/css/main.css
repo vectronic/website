@@ -28,7 +28,8 @@ a {
     color: #ffffff;
 }
 
-.global-nav a.active, .global-nav a:hover  {
+.global-nav a:hover,
+.global-nav a.active {
     text-decoration: underline;
 }
 
@@ -54,7 +55,8 @@ img.brand {
     color: #000000;
 }
 
-.sub-nav a.active, .sub-nav a:hover  {
+.sub-nav a:hover,
+.sub-nav a.active {
     text-decoration: underline;
 }
 
@@ -94,7 +96,7 @@ img.brand {
 .content {
     background-color: #ffffff;
     color: #000000;
-    min-height: 100px;
+    min-height: 200px;
     padding-top: 2em;
     padding-bottom: 2em;
 }
@@ -119,7 +121,8 @@ img.brand {
     color: #000000;
 }
 
-.content a:hover {
+.content a:hover,
+.content a:active {
     text-decoration: underline;
     color: #e3170a;
 }
@@ -133,7 +136,8 @@ img.brand {
     font-size: small;
 }
 
-.content .btn-primary:hover {
+.content .btn-primary:hover,
+.content .btn-primary:active {
     background-color: #e9ecef;
     color: #e3170a;
 }
@@ -161,7 +165,8 @@ img.brand {
     vertical-align: text-top;
 }
 
-.content-title a:hover {
+.content-title a:hover,
+.content-title a:active {
     text-decoration: none;
     color: #e3170a;
 }
