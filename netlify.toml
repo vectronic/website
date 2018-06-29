@@ -1,7 +1,8 @@
+functions = "functions"
+
 [build]
   publish = "public"
   command = "hugo"
-  functions = "functions"
 
 [context.production]
   command = "hugo"
