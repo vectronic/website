@@ -1,7 +1,5 @@
 <div class="row justify-content-center content-title pt-5">
     <div class="offset-1 col-11 col-lg-8 col-xl-8 pb-4">
-        {{ $comments := getJSON "https://api.netlify.com/api/v1/forms/" (getenv "APPROVED_COMMENTS_FORM_ID") "/submissions/?access_token=" (getenv "NETLIFY_API_AUTH") }}
-        {{ print $comments }}
     </div>
 </div>
 <!-- Comment out form now that it has created a form entry in netlify API -->
