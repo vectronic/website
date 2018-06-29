@@ -1,5 +1,3 @@
-functions = "./functions"
-
 [build]
   publish = "public"
   command = "hugo"
