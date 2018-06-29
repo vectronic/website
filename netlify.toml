@@ -1,4 +1,4 @@
-functions = "functions"
+functions = "./functions"
 
 [build]
   publish = "public"
