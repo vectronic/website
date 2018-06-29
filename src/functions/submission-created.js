@@ -44,7 +44,7 @@ exports.handler = function(event, context, callback) {
     //         }]
     // };
     var slackPayload = {
-        "text": body
+        "text": JSON.stringify(body);
     };
 
     // post the notification to Slack
