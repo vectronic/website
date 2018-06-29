@@ -141,6 +141,7 @@ img.brand {
 .content .btn-primary:focus {
     background-color: #e9ecef !important;
     color: #e3170a !important;
+    border-color: #e9ecef !important;
 }
 
 .content-divider div {

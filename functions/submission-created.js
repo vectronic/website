@@ -5,7 +5,7 @@ var request = require("request");
 // populate environment variables locally.
 require('dotenv').config()
 
-export function handler(event, context, callback) {
+exports.handler = function(event, context, callback) {
 
     // get the arguments from the notification
     var body = JSON.parse(event.body);
