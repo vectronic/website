@@ -1,0 +1,10 @@
+{
+  "name": "@vectronic/website",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "netlify-lambda": "^0.4.0",
+    "request": "^2.87.0"
+  }
+}
