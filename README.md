@@ -8,9 +8,10 @@ Vectronic website
 
 ## Development
 
-`export APPROVED_COMMENTS_FORM_ID=<value>`
 `export NETLIFY_API_AUTH=<value>`
-`export SLACK_PENDING_COMMENTS_WEBHOOK_URL=<value>`
+`export NETLIFY_APPROVED_COMMENTS_FORM_ID=<value>`
+`export NETLIFY_PENDING_COMMENTS_FORM_ID=<value>`
+`export SLACK_COMMENT_WEBHOOK_URL=<value>`
 `npx netlify-lambda serve src/functions`
 `hugo server -w`
 

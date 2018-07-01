@@ -1,65 +1,66 @@
 'use strict';
 
-var request = require("request");
+let request = require("request");
 
 // populate environment variables locally.
-require('dotenv').config()
+require('dotenv').config();
 
+// Handle the lambda invocation
 exports.handler = function(event, context, callback) {
 
     // get the arguments from the notification
-    var body = JSON.parse(event.body);
+    let body = JSON.parse(event.body);
 
-    // prepare call to the Slack API
-    var slackURL = process.env.SLACK_PENDING_COMMENTS_WEBHOOK_URL;
-    // var slackPayload = {
-    //     "text": "New comment on " + process.env.URL,
-    //     "attachments": [
-    //         {
-    //             "fallback": "New comment on the comment example site",
-    //             "color": "#444",
-    //             "author_name": body.data.email,
-    //             "title": body.data.path,
-    //             "title_link": process.env.URL + body.data.path,
-    //             "text": body.data.comment
-    //         },
-    //         {
-    //             "fallback": "Manage comments on " + process.env.URL,
-    //             "callback_id": "comment-action",
-    //             "actions": [
-    //                 {
-    //                     "type": "button",
-    //                     "text": "Approve comment",
-    //                     "name": "approve",
-    //                     "value": body.id
-    //                 },
-    //                 {
-    //                     "type": "button",
-    //                     "style": "danger",
-    //                     "text": "Delete comment",
-    //                     "name": "delete",
-    //                     "value": body.id
-    //                 }
-    //             ]
-    //         }]
-    // };
-    var slackPayload = {
-        "text": JSON.stringify(body)
-    };
+    if (body.payload.form_id === process.env.NETLIFY_PENDING_COMMENTS_FORM_ID) {
+        // prepare call to the Slack API
+        let slackURL = process.env.SLACK_COMMENT_WEBHOOK_URL;
+        let slackPayload = {
+            "text": "New comment on " + process.env.URL,
+            "attachments": [
+                {
+                    "fallback": "New comment on vectronic.io",
+                    "color": "#444",
+                    "author_name": body.payload.data.email,
+                    "title": body.payload.data.path,
+                    "title_link": process.env.URL + body.payload.data.path,
+                    "text": body.payload.data.comment
+                },
+                {
+                    "fallback": "Manage comments on " + process.env.URL,
+                    "callback_id": "comment-action",
+                    "actions": [
+                        {
+                            "type": "button",
+                            "text": "Approve comment",
+                            "name": "approve",
+                            "value": body.payload.id
+                        },
+                        {
+                            "type": "button",
+                            "style": "danger",
+                            "text": "Delete comment",
+                            "name": "delete",
+                            "value": body.payload.id
+                        }
+                    ]
+                }]
+        };
 
-    // post the notification to Slack
-    request.post({url:slackURL, json: slackPayload}, function(err, httpResponse, body) {
-        var msg;
-        if (err) {
-            msg = 'Post to Slack failed:' + err;
-        }
-        else {
-            msg = 'Post to Slack successful!  Server responded with:' + body;
-        }
-        callback(null, {
-            statusCode: 200,
-            body: msg
-        })
-        return console.log(msg);
-    });
-}
+        // post the notification to Slack
+        request.post({url:slackURL, json: slackPayload}, function(err, httpResponse, body) {
+            let msg;
+            if (err) {
+                msg = 'Post to Slack failed:' + err;
+            }
+            else {
+                msg = 'Post to Slack successful!  Server responded with:' + body;
+            }
+            callback(null, {
+                statusCode: 200,
+                body: msg
+            });
+            return console.log(msg);
+        });
+    }
+
+};
