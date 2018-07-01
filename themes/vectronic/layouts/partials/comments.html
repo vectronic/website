@@ -1,7 +1,25 @@
 <div class="row justify-content-center content-title pt-5">
     <div class="offset-1 col-11 col-lg-8 col-xl-8 pb-4">
         {{ $comments := getJSON "https://api.netlify.com/api/v1/forms/" (getenv "NETLIFY_APPROVED_COMMENTS_FORM_ID") "/submissions/?access_token=" (getenv "NETLIFY_API_AUTH") }}
-        {{ print $comments }}
+        {{ if gt (len $comments) 0 }}
+            {{ if gt (len $comments) 1 }}
+                <h5>{{ len $comments }} comments</h5>
+            {{ else }}
+                <h5>1 comment</h5>
+            {{ end }}
+            <ul class="comments">
+                {{ range $comments }}
+                <li class="comment">
+                    <img class="avatar" src="{{ .avatar }}">
+                    <h6>{{ .name }}</h6>
+                    <div class="comment-date"> made the following comment, <time>{{ dateFormat "Jan 2, 2006" .Date }}</time></div>
+                    <div class="comment-text">
+                        {{ .comment }}
+                    </div>
+                </li>
+                {{ end }}
+            </ul>
+        {{ end }}
     </div>
 </div>
 <!-- Comment out form now that it has created a form entry in netlify API -->
