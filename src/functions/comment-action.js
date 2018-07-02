@@ -56,7 +56,7 @@ exports.handler = function(event, context, callback) {
                     'path': data.path,
                     'received': new Date().toString(),
                     'email': data.email,
-                    'first-name': data['first-name"],
+                    'first-name': data["first-name"],
                     'last-name': data["last-name"],
                     'comment': data.comment
                 };
