@@ -44,7 +44,7 @@ exports.handler = function(event, context, callback) {
         // get the comment data from the queue
         let url = `https://api.netlify.com/api/v1/submissions/${id}?access_token=${process.env.NETLIFY_API_AUTH}`;
 
-        console.log("Getting from", approvedURL);
+        console.log("Getting from", url);
 
         request(url, function(err, response, body) {
             if (!err && response.statusCode === 200) {
