@@ -12,6 +12,6 @@ Vectronic website
 `export NETLIFY_APPROVED_COMMENTS_FORM_ID=<value>`
 `export SLACK_COMMENT_WEBHOOK_URL=<value>`
 `npx netlify-lambda serve src/functions`
-`hugo server -w`
+`hugo server -w --disableFastRender --ignoreCache`
 
 

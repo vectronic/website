@@ -56,8 +56,8 @@ exports.handler = function(event, context, callback) {
                     'path': data.path,
                     'received': new Date().toString(),
                     'email': data.email,
-                    'first-name': data["first-name"],
-                    'last-name': data["last-name"],
+                    'first_name': data.first_name,
+                    'last_name': data.last_name,
                     'comment': data.comment
                 };
                 let approvedURL = process.env.URL;

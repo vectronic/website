@@ -10,9 +10,9 @@
             <ul class="comments">
                 {{ range $comments }}
                 <li class="comment">
-                    <img class="avatar" src="{{ .avatar }}">
-                    <h6>{{ .name }}</h6>
-                    <div class="comment-date"> made the following comment, <time>{{ dateFormat "Jan 2, 2006" .Date }}</time></div>
+                    <img class="avatar" src="https://www.gravatar.com/avatar/{{ md5 (lower (trim .email)) }}">
+                    <h6>{{ .first_name }} {{ .last_name }}</h6>
+                    <div class="comment-date"> made the following comment, <time>{{ dateFormat "Jan 2, 2006 15:04:05 MST" .received }}</time></div>
                     <div class="comment-text">
                         {{ .comment }}
                     </div>
@@ -23,15 +23,15 @@
     </div>
 </div>
 <!-- Comment out form now that it has created a form entry in netlify API -->
-<!--form class="d-none" name="approved-comments" method="POST" netlify-honeypot="callsign" netlify>
+<form class="d-none" name="approved-comments" method="POST" netlify-honeypot="callsign" netlify>
     <input class="d-none" name="callsign"/>
     <input name="path" type="hidden"/>
-    <input name="first-name" type="text"/>
-    <input name="last-name" type="text"/>
+    <input name="first_name" type="text"/>
+    <input name="last_name" type="text"/>
     <input name="received" type="text"/>
     <input name="email" type="text"/>
     <textarea name="comment" ></textarea>
-</form-->
+</form>
 <div class="row justify-content-center content-title pt-5">
     <div class="offset-1 col-11 col-lg-8 col-xl-8 pb-4">
         <h5>Leave a comment</h5>
@@ -44,12 +44,12 @@
             <input class="d-none" name="callsign"/>
             <input name="path" type="hidden" value="{{ .URL }}"/>
             <label for="validationCustom01">First Name</label>
-            <input name="first-name" type="text" class="form-control" id="validationCustom01" required/>
+            <input name="first_name" type="text" class="form-control" id="validationCustom01" required/>
             <div class="invalid-feedback">Please provide a first name.</div>
         </div>
         <div class="col-3 col-lg-2 col-xl-2">
             <label for="validationCustom02">Last Name</label>
-            <input name="last-name" type="text" class="form-control" id="validationCustom02" required/>
+            <input name="last_name" type="text" class="form-control" id="validationCustom02" required/>
             <div class="invalid-feedback">Please provide a last name.</div>
         </div>
         <div class="col-4 col-lg-3 col-xl-3">
