@@ -26,7 +26,10 @@ exports.handler = function(event, context, callback) {
     // parse the payload
     let body = event.body.split("payload=")[1];
     let payload = JSON.parse(unescape(body));
+    console.log(payload);
+
     let method = payload.actions[0].name;
+    console.log(method);
     let id = payload.actions[0].value;
 
     if (method === "delete") {
@@ -40,6 +43,8 @@ exports.handler = function(event, context, callback) {
 
         // get the comment data from the queue
         let url = `https://api.netlify.com/api/v1/submissions/${id}?access_token=${process.env.NETLIFY_API_AUTH}`;
+
+        console.log("Getting from", approvedURL);
 
         request(url, function(err, response, body) {
             if (!err && response.statusCode === 200) {
@@ -80,6 +85,5 @@ exports.handler = function(event, context, callback) {
                 });
             }
         });
-
     }
 };
