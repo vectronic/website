@@ -41,7 +41,7 @@
 
     <script>
         window.addEventListener("load", function(){
-            window.cookieconsent.initialise({
+            let instance = new cookieconsent.Popup({
                 "palette": {
                     "popup": {
                         "background": "#e9eaea",
@@ -57,8 +57,11 @@
                 },
                 "dismissOnTimeout": 10000,
                 "theme": "edgeless",
-                "location": true
+                "location": {
+                    "services": ["ipinfo", "maxmind"]
+                }
             });
+            document.body.appendChild(instance.element);
         });
     </script>
 </head>

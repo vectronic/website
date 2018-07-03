@@ -10,11 +10,11 @@
             <ul class="comments">
                 {{ range $comments }}
                 <li class="comment">
-                    <img class="avatar" src="https://www.gravatar.com/avatar/{{ md5 (lower (trim .email)) }}">
-                    <h6>{{ .first_name }} {{ .last_name }}</h6>
-                    <div class="comment-date"> made the following comment, <time>{{ dateFormat "Jan 2, 2006 15:04:05 MST" .received }}</time></div>
+                    <img class="avatar" src='https://www.gravatar.com/avatar/{{ md5 (lower (trim .data.email " \n\t")) }}'>
+                    <h6>{{ .data.first_name }} {{ .data.last_name }}</h6>
+                    <div class="comment-date"> made the following comment, <time>{{ dateFormat "Jan 2, 2006 15:04:05 MST" .data.received }}</time></div>
                     <div class="comment-text">
-                        {{ .comment }}
+                        {{ .data.comment }}
                     </div>
                 </li>
                 {{ end }}
@@ -23,7 +23,7 @@
     </div>
 </div>
 <!-- Comment out form now that it has created a form entry in netlify API -->
-<form class="d-none" name="approved-comments" method="POST" netlify-honeypot="callsign" netlify>
+<!--form class="d-none" name="approved-comments" method="POST" netlify-honeypot="callsign" netlify>
     <input class="d-none" name="callsign"/>
     <input name="path" type="hidden"/>
     <input name="first_name" type="text"/>
@@ -31,7 +31,7 @@
     <input name="received" type="text"/>
     <input name="email" type="text"/>
     <textarea name="comment" ></textarea>
-</form>
+</form-->
 <div class="row justify-content-center content-title pt-5">
     <div class="offset-1 col-11 col-lg-8 col-xl-8 pb-4">
         <h5>Leave a comment</h5>

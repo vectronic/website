@@ -54,7 +54,7 @@ exports.handler = function(event, context, callback) {
                 let payload = {
                     'form-name' : "approved-comments",
                     'path': data.path,
-                    'received': new Date().toString(),
+                    'received': new Date().toISOString(),
                     'email': data.email,
                     'first_name': data.first_name,
                     'last_name': data.last_name,

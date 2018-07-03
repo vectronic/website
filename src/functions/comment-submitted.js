@@ -19,7 +19,7 @@ exports.handler = function(event, context, callback) {
             {
                 "fallback": "New comment on vectronic.io",
                 "color": "#444",
-                "author_name": body.data.email,
+                "author_name": body.data.first_name + " " + body.data.last_name,
                 "title": body.data.path,
                 "title_link": process.env.URL + body.data.path,
                 "text": body.data.comment

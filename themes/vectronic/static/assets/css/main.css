@@ -239,6 +239,23 @@ img.brand {
     min-width: 80px;
 }
 
+.cc-revoke {
+    display: block !important;
+}
+
+.cc-link:active,
+.cc-link:hover
+{
+    color: #e3170a !important;
+}
+
+.cc-dismiss:active,
+.cc-dismiss:hover
+{
+    color: #e3170a !important;
+}
+
+
 @media screen and (max-width: 414px) and (orientation: portrait), screen and (max-width: 736px) and (orientation: landscape) {
     .cc-window .cc-message {
         margin: 0.5em;
