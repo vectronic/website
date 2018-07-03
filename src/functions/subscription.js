@@ -14,16 +14,12 @@ exports.handler = function(event, context, callback) {
     // prepare call to the Sendinblue API
     let sendinblueURL = 'https://api.sendinblue.com/v3/contacts';
     let sendinbluePayload = {
-        'listIds': [process.env.SENDINBLUE_LIST_ID],
+        'listIds': [parseInt(process.env.SENDINBLUE_LIST_ID)],
         'email': body.data.email,
-        'attributes': [
-            {
-                'FIRSTNAME': body.data.first_name
-            },
-            {
-                'LASTNAME': body.data.last_name
-            }
-        ]
+        'attributes': {
+            'FIRSTNAME': body.data.first_name,
+            'LASTNAME': body.data.last_name
+        }
     };
 
     let headers = {
