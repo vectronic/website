@@ -196,6 +196,18 @@ img.brand {
     padding-top: 0.5em;
 }
 
+.comments {
+    list-style-type: none;
+}
+
+.comment-text  {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.avatar {
+    height: 3em;
+}
+
 .footer {
     padding: 1.5em;
 }
