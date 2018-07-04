@@ -13,6 +13,7 @@ Vectronic website
 `export SLACK_COMMENT_WEBHOOK_URL=<value>`
 `export SENDINBLUE_API_AUTH=<value>`
 `export SENDINBLUE_LIST_ID=<value>`
+`export VECTRONIC_FUNCTION_AUTH=<value>`
 `npx netlify-lambda serve src/functions`
 `hugo server -w --disableFastRender --ignoreCache`
 

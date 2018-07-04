@@ -8,6 +8,13 @@ require('dotenv').config();
 // Handle the lambda invocation
 exports.handler = function(event, context, callback) {
 
+    // check auth
+    let queryStringParameters = event.queryStringParameters;
+    if (queryStringParameters["VECTRONIC_FUNCTION_AUTH"] !== process.env.VECTRONIC_FUNCTION_AUTH) {
+        console.log("VECTRONIC_FUNCTION_AUTH query param incorrect");
+        return;
+    }
+
     // get the arguments from the notification
     let body = JSON.parse(event.body);
 
