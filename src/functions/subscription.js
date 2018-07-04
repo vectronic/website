@@ -11,8 +11,7 @@ exports.handler = function(event, context, callback) {
     // check auth
     let queryStringParameters = event.queryStringParameters;
     if (queryStringParameters["VECTRONIC_FUNCTION_AUTH"] !== process.env.VECTRONIC_FUNCTION_AUTH) {
-        console.log("VECTRONIC_FUNCTION_AUTH query param incorrect");
-        return;
+        return console.log("VECTRONIC_FUNCTION_AUTH query param incorrect");
     }
 
     // get the arguments from the notification
