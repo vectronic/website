@@ -1,2 +1,8 @@
+# Redirect domain aliases to primary domain
+http://www.vectronic.org/* https://vectronic.io/:splat 301!
+https://www.vectronic.org/* https://vectronic.io/:splat 301!
+http://vectronic.org/* https://vectronic.io/:splat 301!
+https://vectronic.org/* https://vectronic.io/:splat 301!
+
 # Optional: Redirect default Netlify subdomain to primary domain
 https://vectronic.netlify.com/* https://vectronic.io/:splat 301!
