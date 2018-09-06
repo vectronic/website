@@ -1,39 +1,42 @@
-{{ $comments := getJSON "https://api.netlify.com/api/v1/forms/" (getenv "NETLIFY_APPROVED_COMMENTS_FORM_ID") "/submissions/?access_token=" (getenv "NETLIFY_API_AUTH") }}
-{{ $comments := where $comments ".data.path" .URL }}
-{{ if gt (len $comments) 0 }}
-    <div class="row justify-content-center content-title pt-5">
-        <div class="offset-1 col-11 col-lg-8 col-xl-8">
-            {{ if gt (len $comments) 1 }}
-                <h5>{{ len $comments }} comments</h5>
-            {{ else }}
-                <h5>1 comment</h5>
-            {{ end }}
+{{ if .Site.Data.comments }}
+    {{ $commentsForPage := index .Site.Data.comments .URL }}
+    {{ if $commentsForPage }}
+        <div class="row justify-content-center content-title pt-5">
+            <div class="offset-1 col-11 col-lg-8 col-xl-8">
+                {{ if gt (len $commentsForPage) 1 }}
+                    <h5>{{ len $commentsForPage }} comments</h5>
+                {{ else }}
+                    <h5>1 comment</h5>
+                {{ end }}
+            </div>
         </div>
-    </div>
-    <ul class="comments pb-0 mb-0 pl-0">
-        {{ range $comments }}
-        <li class="comment pt-3">
-            <div class="row justify-content-center">
-                <div class="col-10 col-lg-7 col-xl-7">
-                    <div class="row justify-content-start">
-                        <div class="col-auto">
-                            <img class="avatar" src='https://www.gravatar.com/avatar/{{ md5 (lower (trim .data.email " \n\t")) }}'>
-                        </div>
-                        <div class="col pl-0">
-                            {{ .data.first_name | html }} {{ .data.last_name | html }}
-                            <small class="form-text text-muted"><time>{{ dateFormat "Jan 2, 2006 15:04:05 MST" .data.received }}</small>
+        <ul class="comments pb-0 mb-0 pl-0">
+            {{ range $commentsForPage }}
+            <li class="comment pt-3">
+                <div class="row justify-content-center">
+                    <div class="col-10 col-lg-7 col-xl-7">
+                        <div class="row justify-content-start">
+                            <div class="col-auto">
+                                <img class="avatar" src="{{ .gravatar }}">
+                            </div>
+                            <div class="col pl-0">
+                                {{ .first_name | html }} {{ .last_name | html }}
+                                <small class="form-text text-muted">
+                                    <time>{{ dateFormat "Jan 2, 2006 15:04:05 MST" .received }}</time>
+                                </small>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row justify-content-center pt-1">
-                <div class="col-10 col-lg-7 col-xl-7">
-                    <div class="comment-text">{{ .data.comment | html }}</div>
+                <div class="row justify-content-center pt-1">
+                    <div class="col-10 col-lg-7 col-xl-7">
+                        <div class="comment-text">{{ .comment | html }}</div>
+                    </div>
                 </div>
-            </div>
-        </li>
-        {{ end }}
-    </ul>
+            </li>
+            {{ end }}
+        </ul>
+    {{ end }}
 {{ end }}
 <!-- Comment out form now that it has created a form entry in netlify API -->
 <!--form class="d-none" name="approved-comments" method="POST" netlify-honeypot="callsign" netlify>

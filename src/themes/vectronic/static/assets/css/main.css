@@ -12,8 +12,8 @@ a {
 
 .global-nav {
     padding-left: 1.5em;
-    padding-top: 0em;
-    padding-bottom: 0em;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .global-nav .navbar-toggler {

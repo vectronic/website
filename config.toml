@@ -5,13 +5,18 @@ enableRobotsTXT = true
 theme = "vectronic"
 sectionPagesMenu = "global"
 paginate = 15
+contentDir = "src/content"
+staticDir = "src/static"
+themesDir = "src/themes"
+publishDir = "build/public"
+dataDir = "build/data"
 
 [taxonomies]
     tag = "tags"
 
 [params]
-    name = "vectronic"
-    description = ""
+    name = "hello.vectronic@gmail.com"
+    description = "Personal blog"
 
 [menu]
     [[menu.global]]

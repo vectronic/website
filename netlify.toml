@@ -1,11 +1,11 @@
 [build]
-  command = "hugo && npx netlify-lambda build src/functions"
-  publish = "public"
-  functions = "functions"
+    command = "hugo && npx netlify-lambda build src/functions"
+    publish = "build/public"
+    functions = "build/functions"
 
 [context.production]
-  command = "hugo && npx netlify-lambda build src/functions"
-  functions = "functions"
-  [context.production.environment]
-    HUGO_VERSION = "0.41"
-    HUGO_ENV = "production"
+    command = "hugo && npx netlify-lambda build src/functions"
+    functions = "build/functions"
+    [context.production.environment]
+        HUGO_VERSION = "0.41"
+        HUGO_ENV = "production"
