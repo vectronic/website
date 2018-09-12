@@ -1,7 +1,6 @@
 ---
-title: Hello
-date: 2017-01-23
-tags: ["chapat","hugo","toml"]
+title: Test
+date: 2018-09-12
 
 ---
-I decided to start learning Go in March 2017.
+Hello World
