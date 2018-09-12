@@ -3,11 +3,18 @@ Vectronic website
 
 ## Environment Setup
 
-`brew install hugo`
-`npm install`
+Clone the repository locally.
+ 
+Working from the root of the project, install required software (assuming MacOS):
+
+```
+brew install hugo
+npm install
+```
 
 ## Development
 
+Define the following environment variables (these are described further below):
 ```
 export NETLIFY_API_AUTH=<value>
 export NETLIFY_APPROVED_COMMENTS_FORM_ID=<value>
@@ -30,13 +37,13 @@ or
 
 #### Channels
 
-Configure three channels:
+Configure four channels:
 
-* `#vectronic-comment` - used to view comments submitted to posts on the website and either accept or reject them
-* `#vectronic-contact` - used to view messages submitted via the website contact form
-* `#vectronic-subscribe` - used to be aware of subscriptions via the website
- (a Netlify Function is used to automatically add subscription to a SendInBlue contact list)
-* `#vectronic-deployment` - used to view success or failure of Netlify deployments
+* `#vectronic-comment` - Used to view comments submitted to posts on the website and either accept or reject them.
+* `#vectronic-contact` - Used to view messages submitted via the website contact form.
+* `#vectronic-subscribe` - Used to simply monitor subscriptions via the website.
+ (a Netlify Function is used to automatically add subscription to a SendInBlue contact list).
+* `#vectronic-deployment` - Used to view success or failure of Netlify deployments.
 
 #### Contact App
 
@@ -57,6 +64,13 @@ Configure a new `vectronic-comment` app which has a Webhook posting to the `#vec
 This will be used by the `comment-submitted` Netlify Function triggered when a new comment is stored in the `pending-comments` form.
 
 As outlined further below, this webhook URL is exposed to the Netlify Function by configuring the Netlify environment variable `SLACK_COMMENT_WEBHOOK_URL`. 
+
+The Command App also needs to have Interactivity configured so that a user can approve or delete the comment from Slack.
+The Request URL needs to be configured to submit the user action to the Netlify Function handling this e.g.:
+
+    https://vectronic.netlify.com/.netlify/functions/comment-action?VECTRONIC_FUNCTION_AUTH=<shared key>
+
+Where the shared key is defined further below.
 
 #### Deployment App
 
@@ -92,12 +106,22 @@ The configuration uses Netlify Forms and Functions Add-ons. These are both free 
 
 #### One Time Only Table Creation
 
-The form table in Netlify for approved comments is only added to via Slack webhook calls to the Netlify API. But this 
-table does need to be setup in Netlify first. The easiest way to do this is uncomment the `approved-comments` form
-in `comments.html`. 
+The form tables in Netlify are only added when initially submitting a form. The `pending-comments` and `approved-comments`
+tables need to exist before they can be further referenced in configuration, so there is a need to do one off 
+configuration for these.
 
-After deploying the site to Netlify once, the form element can be commented out again and the value for `NETLIFY_APPROVED_COMMENTS_FORM_ID`
-can be ascertained from the Netlify URL when navigating to `Account -> Site -> Forms -> approved-comments`.
+##### Pending Comments
+
+A test post needs to be created and a comment submitted on the post. This will result in the `pending-comments` form 
+table appearing in the Netlify admin UI.
+
+##### Approved Comments 
+Entries in the `approved-comments` form table are only added via Slack webhook calls to the Netlify API. But this 
+table needs to be created in Netlify first. 
+
+The easiest way to do this is uncomment the `approved-comments` form in `comments.html`. 
+After submitting to this form once, the `approved-comments` form table will appear in the Netlify admin UI. 
+The form element in the HTML can then be commented out again. 
 
 #### User Account Level OAuth Token
 
@@ -109,11 +133,13 @@ This will be used when making Netlify API calls from Slack and Netlify Functions
 
 The following need to be defined:
 
-* `NETLIFY_API_AUTH` - The `vectronic-comments-management` personal access token configured in Netlify OAuth applications section (as per the step above) 
-* `NETLIFY_APPROVED_COMMENTS_FORM_ID` -  ID of the `approved-comments` form created in Netlify (as per the step above)
-* `SLACK_COMMENT_WEBHOOK_URL` - Incoming webhook URL for the comment app configured in Slack 
-* `SENDINBLUE_API_AUTH` - API key configured in SendInBlue (as per the step above)
-* `SENDINBLUE_LIST_ID` - ID of a contact list configured in SendInBlue (as per the step above)
+* `NETLIFY_API_AUTH` - The `vectronic-comments-management` personal access token configured in Netlify OAuth 
+applications section. 
+* `NETLIFY_APPROVED_COMMENTS_FORM_ID` -  ID of the `approved-comments` form created in Netlify.
+The value for this can be ascertained from the Netlify URL when navigating to `Account -> Site -> Forms -> approved-comments`.
+* `SLACK_COMMENT_WEBHOOK_URL` - Incoming webhook URL for the comment app configured in Slack. 
+* `SENDINBLUE_API_AUTH` - API key configured in SendInBlue.
+* `SENDINBLUE_LIST_ID` - ID of a contact list configured in SendInBlue.
 * `VECTRONIC_FUNCTION_AUTH` - This can be any shared secret key. It is used to prevent public access to the Netlify Functions. 
 
 #### Build Hooks
@@ -174,7 +200,8 @@ Configure the following optimizations:
 Configure the following Slack Integrations:
 
 * On deployment failure post to the `vectronic-deployment` app webhook configred in Slack.
-* On deployment success post to the `vectronic-deployment` app webhook configred in Slack. This integration is just to be able to view subscription activity.
+* On deployment success post to the `vectronic-deployment` app webhook configred in Slack. This integration is just to 
+be able to view subscription activity.
 
 #### Domain Management
 
@@ -185,14 +212,17 @@ Configuration for Domains and HTTPS is based on standard Netlify instructions.
 Configure the following Slack Integrations:
 
 * On `New form submission` to the `contact` form, post to the `vectronic-contact` app webhook configred in Slack.
-* On `New form submission` to the `subscribe` form, post to the `vectronic-subscribe` app webhook configred in Slack. This integration is just to be able to view subscription activity.
+* On `New form submission` to the `subscribe` form, post to the `vectronic-subscribe` app webhook configred in Slack. 
+This integration is just to be able to view subscription activity.
 
 Configure the following Outgoing Webhooks:
 
-* On `New form submission` to the `subscribe` form, post to the `subscription` function passing the shared secret configured in Nelify e.g. 
+* On `New form submission` to the `subscribe` form, post to the `subscription` function passing the shared secret 
+configured in Nelify e.g. 
 
         https://vectronic.netlify.com/.netlify/functions/subscription?VECTRONIC_FUNCTION_AUTH=<shared_secret>
-* On `New form submission` to the `pending-comments` form, post to the `comment-submitted` function passing the shared secret configured in Nelify e.g. 
+* On `New form submission` to the `pending-comments` form, post to the `comment-submitted` function passing the shared 
+secret configured in Nelify e.g. 
 
         https://vectronic.netlify.com/.netlify/functions/comment-submitted?VECTRONIC_FUNCTION_AUTH=<shared_secret>
 * On `New form submission` to the `approved-comments` form, post to the build hook configured in Netlify.
