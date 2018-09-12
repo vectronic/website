@@ -36,6 +36,7 @@ Configure three channels:
 * `#vectronic-contact` - used to view messages submitted via the website contact form
 * `#vectronic-subscribe` - used to be aware of subscriptions via the website
  (a Netlify Function is used to automatically add subscription to a SendInBlue contact list)
+* `#vectronic-deployment` - used to view success or failure of Netlify deployments
 
 #### Contact App
 
@@ -56,6 +57,12 @@ Configure a new `vectronic-comment` app which has a Webhook posting to the `#vec
 This will be used by the `comment-submitted` Netlify Function triggered when a new comment is stored in the `pending-comments` form.
 
 As outlined further below, this webhook URL is exposed to the Netlify Function by configuring the Netlify environment variable `SLACK_COMMENT_WEBHOOK_URL`. 
+
+#### Deployment App
+
+Configure a new `vectronic-deployment` app which has a Webhook posting to the `#vectronic-deployment` channel. 
+
+This will be used by Slack Integration deploy notifications in Netlify.
 
 
 ## SendInBlue Configuration
@@ -98,7 +105,7 @@ At the user account level in Netlify, create a new OAuth application personal ac
 
 This will be used when making Netlify API calls from Slack and Netlify Functions.   
 
-#### Build environment variables
+#### Build Environment Variables
 
 The following need to be defined:
 
@@ -109,11 +116,11 @@ The following need to be defined:
 * `SENDINBLUE_LIST_ID` - ID of a contact list configured in SendInBlue (as per the step above)
 * `VECTRONIC_FUNCTION_AUTH` - This can be any shared secret key. It is used to prevent public access to the Netlify Functions. 
 
-#### Build hooks
+#### Build Hooks
 
 Define a build hook which will be used to automatically rebuild the site when a new comment is approved.
 
-#### Post processing
+#### Post Processing
 
 Configure the following entry before `</head>` to inject Google analytics:
 
@@ -153,7 +160,7 @@ for (i = 0; i < outboundLinks.length; i++) {
 </script>
 ```
 
-#### Asset optimization
+#### Asset Optimization
 
 Configure the following optimizations:
 
@@ -161,6 +168,13 @@ Configure the following optimizations:
 * CSS: *Bundle & Minify*
 * JS: *Bundle & Minify*
 * Images: *Lossless compression*
+
+#### Deploy Notifications
+
+Configure the following Slack Integrations:
+
+* On deployment failure post to the `vectronic-deployment` app webhook configred in Slack.
+* On deployment success post to the `vectronic-deployment` app webhook configred in Slack. This integration is just to be able to view subscription activity.
 
 #### Domain Management
 
