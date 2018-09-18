@@ -1,52 +1,52 @@
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    {{ with .Site.Params.name }}<meta name="author" content="{{ . }}" />{{ end }}
+    {{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
 
     {{ if .IsHome }}
         <title>{{ .Site.Title }}</title>
         <!-- TODO: what is .Description or how to truncate summary? -->
         {{ with .Site.Params.description }}
-            <meta name="subject" content="{{ . }}" />
-            <meta name="summary" content="{{ . }}" />
-            <meta name="description" content="{{ . }}" />
+            <meta name="subject" content="{{ . }}">
+            <meta name="summary" content="{{ . }}">
+            <meta name="description" content="{{ . }}">
         {{ end }}
     {{ else }}
         <title>{{ .Title }}</title>
         <!-- TODO: what is .Description or how to truncate summary? -->
         {{ with .Summary }}
-            <meta name="subject" content="{{ . }}" />
-            <meta name="summary" content="{{ . }}" />
-            <meta name="description" content="{{ . }}" />
+            <meta name="subject" content="{{ . }}">
+            <meta name="summary" content="{{ . }}">
+            <meta name="description" content="{{ . }}">
         {{ end }}
     {{ end }}
     {{ if not .Date.IsZero }}<meta name="revised" content='{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}'>{{ end }}
 
     {{ if .IsHome }}
-        <meta property="og:site_name" content="{{ .Site.Title }}" />
-        <meta property="og:title" content="{{ .Site.Title }}" />
-        <meta property="og:url" content="{{ .Permalink }}" />
+        <meta property="og:site_name" content="{{ .Site.Title }}">
+        <meta property="og:title" content="{{ .Site.Title }}">
+        <meta property="og:url" content="{{ .Permalink }}">
         <!-- TODO: what is .Description? -->
-        <meta property="og:description" content="{{ .Description }}" />
-        <meta property="og:image" content="https://vectronic.io/assets/img/logo.png" />
-        <meta property="og:type" content="website" />
+        <meta property="og:description" content="{{ .Description }}">
+        <meta property="og:image" content="https://vectronic.io/assets/img/logo.png">
+        <meta property="og:type" content="website">
     <!-- TODO: check if post as well -->
     {{ else }}
-        <meta property="og:site_name" content="{{ .Site.Title }}" />
-        <meta property="og:title" content="{{ .Title }}" />
-        <meta property="og:url" content="{{ .Permalink }}" />
+        <meta property="og:site_name" content="{{ .Site.Title }}">
+        <meta property="og:title" content="{{ .Title }}">
+        <meta property="og:url" content="{{ .Permalink }}">
         <!-- TODO: what is .Description? -->
-        <meta property="og:description" content="{{ .Description }}" />
+        <meta property="og:description" content="{{ .Description }}">
         <!-- TODO: 	how to check if a post has an image -->
-        <meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />
-        <meta property="og:type" content="article" />
+        <meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg">
+        <meta property="og:type" content="article">
         <!-- TODO: 	post published and modified time and format for og iso8601 -->
-        <meta property="article:published_time" content="" />
-        <meta property="article:modified_time" content="" />
+        <meta property="article:published_time" content="">
+        <meta property="article:modified_time" content="">
         {{ with .Site.Params.name }}
-            <meta property="article:author" content="{{ . }}" />
+            <meta property="article:author" content="{{ . }}">
         {{ end }}
         {{ range .Params.tags }}
             <meta property="article:tag" content="{{.}}">
@@ -120,7 +120,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,600">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:400,600">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
@@ -149,6 +149,8 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
+    <link rel="alternate" type="application/rss+xml" title="Vectronic" href="https://vectronic.io/index.xml">
 
     <script>
         window.addEventListener("load", function(){
