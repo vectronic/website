@@ -4,11 +4,14 @@
         <div class="row justify-content-between align-self-start">
             <div class="col">
                 <h4><a href="{{ .Permalink }}" class="permalink u-url p-name">{{ .Title }}</a></h4>
+                {{ with .Site.Params.name }}
+                <div class="p-author h-card d-none">{{ . }}</div>
+                {{ end }}
             </div>
             {{ if .Params.tags }}
                 <div class="col flex-shrink-2 text-right content-tags">
                     {{ range sort (.Params.tags) }}
-                    <a class="badge tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ upper . }}</a>
+                    <a class="badge tag p-category" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ upper . }}</a>
                     {{ end }}
                 </div>
             {{ end }}
