@@ -10,15 +10,17 @@
         <div class="row justify-content-center content-divider">
             <div class="col-12 col-lg-9 col-xl-9"><hr/></div>
         </div>
-        {{ partial "post-details.html" . }}
-        <div class="row justify-content-center content-body">
-            <div class="offset-1 col-11 col-lg-8 col-xl-8">
-                {{ .Summary }}
+        <div class="h-entry">
+            {{ partial "post-details.html" . }}
+            <div class="row justify-content-center content-body">
+                <div class="offset-1 col-11 col-lg-8 col-xl-8 p-summary">
+                    {{ .Summary }}
+                </div>
             </div>
-        </div>
-        <div class="row justify-content-center content-more">
-            <div class="offset-1 col-11 col-lg-8 col-xl-8">
-                <a href="{{ .Permalink }}" class="permalink">Read More</a>
+            <div class="row justify-content-center content-more">
+                <div class="offset-1 col-11 col-lg-8 col-xl-8">
+                    <a href="{{ .Permalink }}" class="permalink">Read More</a>
+                </div>
             </div>
         </div>
     {{ end }}

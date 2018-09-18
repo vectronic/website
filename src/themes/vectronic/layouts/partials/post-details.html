@@ -1,9 +1,9 @@
 <div class="row justify-content-center align-top">
-    <div class="col-1 pr-0 content-date">{{ dateFormat "Jan 2, 2006" .Date }}</div>
+    <div class="col-1 pr-0 content-date"><time class="dt-published" datetime="{{ .Date }}">{{ dateFormat "Jan 2, 2006" .Date }}</time></div>
     <div class="col-11 col-lg-8 col-xl-8 content-title">
         <div class="row justify-content-between align-self-start">
             <div class="col">
-                <h4><a href="{{ .Permalink }}" class="permalink">{{ .Title }}</a></h4>
+                <h4><a href="{{ .Permalink }}" class="permalink u-url p-name">{{ .Title }}</a></h4>
             </div>
             {{ if .Params.tags }}
                 <div class="col flex-shrink-2 text-right content-tags">
