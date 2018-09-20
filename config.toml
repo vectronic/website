@@ -12,6 +12,7 @@ publishDir = "build/public"
 dataDir = "build/data"
 pygmentsCodeFences = true
 pygmentsStyle = "manni"
+enableGitInfo = true
 
 [taxonomies]
     tag = "tags"
