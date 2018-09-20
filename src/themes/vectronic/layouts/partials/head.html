@@ -7,56 +7,50 @@
 
     {{ if .IsHome }}
         <title>{{ .Site.Title }}</title>
-        <!-- TODO: what is .Description or how to truncate summary? -->
+        <meta name="subject" content="{{ .Site.Title }}">
         {{ with .Site.Params.description }}
-            <meta name="subject" content="{{ . }}">
             <meta name="summary" content="{{ . }}">
             <meta name="description" content="{{ . }}">
         {{ end }}
     {{ else }}
         <title>{{ .Title }}</title>
-        <!-- TODO: what is .Description or how to truncate summary? -->
+        <meta name="subject" content="{{ .Title }}">
         {{ with .Summary }}
-            <meta name="subject" content="{{ . }}">
             <meta name="summary" content="{{ . }}">
             <meta name="description" content="{{ . }}">
         {{ end }}
     {{ end }}
     {{ if not .Date.IsZero }}<meta name="revised" content='{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}'>{{ end }}
 
-    {{ if .IsHome }}
-        <meta property="og:site_name" content="{{ .Site.Title }}">
-        <meta property="og:title" content="{{ .Site.Title }}">
-        <meta property="og:url" content="{{ .Permalink }}">
-        <!-- TODO: what is .Description? -->
-        <meta property="og:description" content="{{ .Description }}">
-        <meta property="og:image" content="https://vectronic.io/assets/img/logo.png">
-        <meta property="og:type" content="website">
-    <!-- TODO: check if post as well -->
-    {{ else }}
+    {{ if eq .Section "posts" }}
         <meta property="og:site_name" content="{{ .Site.Title }}">
         <meta property="og:title" content="{{ .Title }}">
         <meta property="og:url" content="{{ .Permalink }}">
-        <!-- TODO: what is .Description? -->
-        <meta property="og:description" content="{{ .Description }}">
-        <!-- TODO: 	how to check if a post has an image -->
-        <meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg">
+        <meta property="og:description" content="{{ .Summary }}">
+        {{ with .Resources.ByType "image" }}
+            {{ range . }}
+                <meta property="og:image" content="{{ .Permalink }}">
+            {{ end }}
+        {{ end }}
         <meta property="og:type" content="article">
-        <!-- TODO: 	post published and modified time and format for og iso8601 -->
-        <meta property="article:published_time" content="">
-        <meta property="article:modified_time" content="">
+        <meta property="article:published_time" content='{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}'>
+        <meta property="article:modified_time" content='{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}'>
         {{ with .Site.Params.name }}
             <meta property="article:author" content="{{ . }}">
         {{ end }}
         {{ range .Params.tags }}
-            <meta property="article:tag" content="{{.}}">
+            <meta property="article:tag" content="{{ . }}">
         {{end}}
+    {{ else }}
+        <meta property="og:site_name" content="{{ .Site.Title }}">
+        <meta property="og:title" content="{{ .Title }}">
+        <meta property="og:url" content="{{ .Permalink }}">
+        <meta property="og:description" content="{{ .Site.Params.description }}">
+        <meta property="og:image" content="https://vectronic.io/assets/img/logo.png">
+        <meta property="og:type" content="website">
     {{ end }}
 
-    <!-- TODO: check if post as well -->
-    {{ if .IsPage }}
-        <!-- TODO: truncate title -->
-        <!-- TODO: 	how to check if a post has an image -->
+    {{ if eq .Section "posts" }}
         <script type="application/ld+json">
             {
                 "@context": "http://schema.org",
@@ -74,21 +68,24 @@
                     "position": 2,
                     "item": {
                         "@id": "{{ .Permalink }}",
-                        "name": "{{ .Title }}",
-                        "image": "http://example.com/images/icon-author.png"
+                        "name": "{{ truncate 30 .Title }}"{{ range first 1 ( .Resources.ByType "image" ) }},
+                        "image": "{{ .Permalink }}"{{ end }}
                     }
                 }]
             }
         </script>
-        <!-- TODO: truncate title -->
-        <!-- TODO: 	how to check if a post has an image -->
         <script type="application/ld+json">
             {
                 "@context": "http://schema.org",
                 "@type": "NewsArticle",
                 "headline": "{{ .Title }}",
                 "image": [
-                    "https://example.com/photos/1x1/photo.jpg"
+                        {{ range first 1 ( .Resources.ByType "image" ) }}
+                            "{{ .Permalink }}"
+                        {{ end }}
+                        {{ range after 1 ( .Resources.ByType "image" ) }}
+                            ,"{{ .Permalink }}"
+                        {{ end }}
                 ]
             }
         </script>

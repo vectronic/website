@@ -20,7 +20,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non neque odi
 
 Here is an image:
 
-{{< figure src="images/screenshot.png" caption="This is a caption" width="60%">}}
+{{< figure src="images/screenshot1.png" caption="This is a caption" width="60%">}}
+
+
+Here is another image:
+
+{{< figure src="images/screenshot2.png" width="70%">}}
+
 
 Here is a list:
 
