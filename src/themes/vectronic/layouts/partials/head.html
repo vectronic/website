@@ -83,8 +83,10 @@
                         {{ range first 1 ( .Resources.ByType "image" ) }}
                             "{{ .Permalink }}"
                         {{ end }}
-                        {{ range after 1 ( .Resources.ByType "image" ) }}
-                            ,"{{ .Permalink }}"
+                        {{ if gt (len ( .Resources.ByType "image" )) 1 }}
+                            {{ range after 1 ( .Resources.ByType "image" ) }}
+                                ,"{{ .Permalink }}"
+                            {{ end }}
                         {{ end }}
                 ]
             }
