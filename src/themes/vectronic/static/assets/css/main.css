@@ -6,6 +6,21 @@ body {
     margin: 0px;
 }
 
+h1 {
+    font-family: 'IBM Plex Mono Light', monospace;
+    font-size: xx-large;
+}
+
+h2 {
+    font-family: 'IBM Plex Mono Light', monospace;
+    font-size: x-large;
+}
+
+h3 {
+    font-family: 'IBM Plex Mono Light', monospace;
+    font-size: large;
+}
+
 a {
     text-decoration: none;
 }
@@ -202,6 +217,22 @@ img.brand {
 
 .content-body  {
     font-family: 'Work Sans', sans-serif;
+    font-size: small;
+}
+
+.content-body h1 {
+    font-family: 'IBM Plex Mono Light', monospace;
+    font-size: x-large;
+}
+
+.content-body h2 {
+    font-family: 'IBM Plex Mono Light', monospace;
+    font-size: large;
+}
+
+.content-body h3 {
+    font-family: 'IBM Plex Mono Light', monospace;
+    font-size: medium;
 }
 
 .content-more  {

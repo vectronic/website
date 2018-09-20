@@ -3,7 +3,7 @@
         {{ partial "post-details.html" . }}
         <div class="row justify-content-center content-body">
             <div class="offset-1 col-11 col-lg-8 col-xl-8 e-content">
-                {{ .Content }}
+                {{ emojify .Content }}
             </div>
         </div>
         {{ partial "sharing.html" . }}
