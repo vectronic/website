@@ -4,9 +4,7 @@
         <div class="row justify-content-between align-self-start">
             <div class="col">
                 <h1><a href="{{ .Permalink }}" class="permalink u-url p-name">{{ .Title }}</a></h1>
-                {{ with .Site.Params.name }}
-                <div class="p-author h-card d-none">{{ . }}</div>
-                {{ end }}
+                <div class="p-author h-card d-none">{{ .Site.Params.email }}</div>
             </div>
             {{ if .Params.tags }}
                 <div class="col flex-shrink-2 text-right content-tags">

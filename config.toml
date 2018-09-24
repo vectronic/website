@@ -18,7 +18,8 @@ enableGitInfo = true
     tag = "tags"
 
 [params]
-    name = "hello.vectronic@gmail.com"
+    name = "vectronic"
+    email = "hello.vectronic@gmail.com"
     description = "Personal blog"
 
 [menu]
