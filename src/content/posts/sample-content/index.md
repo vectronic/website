@@ -3,6 +3,7 @@ title: Sample Content
 date: 2018-09-18
 
 ---
+{{< figure src="images/screenshot1.png" caption="This is a caption" width="60%">}}
 
 I :heart: emoji!
 
