@@ -48,6 +48,8 @@
         <meta property="og:type" content="website">
     {{ end }}
 
+    {{ partial "twitter_cards" . }}
+
     {{ if eq .Section "posts" }}
         <script type="application/ld+json">
             {
