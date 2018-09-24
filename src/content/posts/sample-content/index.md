@@ -3,6 +3,8 @@ title: Sample Content
 date: 2018-09-18
 
 ---
+Here is an image:
+
 {{< figure src="images/screenshot1.png" caption="This is a caption" width="60%">}}
 
 I :heart: emoji!
@@ -17,12 +19,6 @@ Curabitur quis est ullamcorper, eleifend nisi a, rutrum eros. Donec laoreet quam
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non neque odio. Curabitur quis est ullamcorper, eleifend nisi a, rutrum eros. Donec laoreet quam massa, quis pellentesque odio ultrices nec. Nulla non mauris magna. Nullam ut enim ultrices, suscipit nunc in, suscipit tortor. Etiam lectus tortor, ultrices quis ligula nec, fermentum scelerisque velit. Sed accumsan, metus vel vestibulum rhoncus, nunc est sodales massa, facilisis sodales lacus turpis eu diam.
 ### Heading Level 3
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non neque odio. Curabitur quis est ullamcorper, eleifend nisi a, rutrum eros. Donec laoreet quam massa, quis pellentesque odio ultrices nec. Nulla non mauris magna. Nullam ut enim ultrices, suscipit nunc in, suscipit tortor. Etiam lectus tortor, ultrices quis ligula nec, fermentum scelerisque velit. Sed accumsan, metus vel vestibulum rhoncus, nunc est sodales massa, facilisis sodales lacus turpis eu diam.
-
-
-Here is an image:
-
-{{< figure src="images/screenshot1.png" caption="This is a caption" width="60%">}}
-
 
 Here is another image:
 
