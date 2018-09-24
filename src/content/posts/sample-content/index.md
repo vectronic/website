@@ -1,6 +1,6 @@
 ---
 title: Sample Content
-date: 2018-09-18
+date: 2018-09-24
 
 ---
 Here is an image:
