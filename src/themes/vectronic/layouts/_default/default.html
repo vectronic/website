@@ -3,8 +3,13 @@
         <div class="row justify-content-center content-title">
             <div class="col-12 col-lg-9 col-xl-9">
                 <h1>{{ .Title }}</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center content-body">
+            <div class="col-12 col-lg-9 col-xl-9">
                 {{ emojify .Content }}
             </div>
         </div>
     </div>
 {{ end }}
+

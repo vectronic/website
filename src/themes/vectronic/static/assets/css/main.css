@@ -283,6 +283,10 @@ img.brand {
     color: #6e6c76;
 }
 
+.copyright a {
+    color: #6e6c76;
+}
+
 .cc-window {
     font-family: 'IBM Plex Mono Light', monospace;
     font-size: small;
