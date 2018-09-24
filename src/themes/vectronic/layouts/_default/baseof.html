@@ -11,13 +11,13 @@
         <!-- Add external relative attribute to external links. This is used to render an external link icon
             after the link and also to trap external navigation with google analytics -->
         <script>
-            let outboundLinks = document.getElementsByTagName('a');
-            for (let i = 0; i < outboundLinks.length; i++) {
-                let outboundLink = outboundLinks[i];
-                if (((outboundLink.href.indexOf(location.host) > 8 || outboundLink.href.indexOf(location.host) === -1) &&
-                    (outboundLink.href.match(/^http:/i) || outboundLink.href.match(/^https:/i)))
-                    || outboundLink.href.match(/^mailto:/i)) {
-                    outboundLink.rel = "external";
+            let externalLinks = document.getElementsByTagName('a');
+            for (let i = 0; i < externalLinks.length; i++) {
+                let externalLink = externalLinks[i];
+                if (((externalLink.href.indexOf(location.host) > 8 || externalLink.href.indexOf(location.host) === -1) &&
+                    (externalLink.href.match(/^http:/i) || externalLink.href.match(/^https:/i)))
+                    || externalLink.href.match(/^mailto:/i)) {
+                    externalLink.rel = "external";
                 }
             }
         </script>
