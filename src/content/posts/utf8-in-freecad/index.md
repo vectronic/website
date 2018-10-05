@@ -1,5 +1,5 @@
 ---
-title: UTF-8 in FreeCAD
+title: Unicode in FreeCAD
 date: 2018-10-03
 tags: 
 - freecad
@@ -9,8 +9,10 @@ tags:
 ---
 
 I've been writing a Python macro for FreeCAD as a learning exercise on both subjects. I thought it would be nice to 
-display the UTF-8 character &#x1f6c8; as a tooltip icon in a GUI form. A couple of hours 
-later and I wanted to stop teaching myself Python and head back to Java...
+display the [Circled Information Source](https://www.fileformat.info/info/unicode/char/1f6c8/index.htm) unicode character
+as a tooltip icon in a GUI form. It looks like this: &#x1f6c8; (if your current viewing font supports it). 
+
+After attempting this for a couple of hours, I wanted to stop teaching myself Python and head back to Java...
 
 <!--more-->
 
@@ -18,7 +20,7 @@ Here are the things to look out for when using Python 2.7:
 
 - As per [PEP 263](https://www.python.org/dev/peps/pep-0263/) a Python source file needs to start with:
 
-    ```python
+    ```plaintext
     # coding: UTF-8
     ```
     
@@ -27,7 +29,7 @@ Here are the things to look out for when using Python 2.7:
 - UTF-8 [string literals](https://docs.python.org/2/reference/lexical_analysis.html#grammar-token-stringprefix) need 
 to be prefixed with a `u` as follows:
 
-    ```python
+    ```plaintext
     u"My UTF-8 string 🛈"
     ```
 
@@ -39,7 +41,7 @@ to be prefixed with a `u` as follows:
 
     Within the FreeCAD 18.0 Python terminal:
     
-    ```python
+    ```plaintext
     Python 2.7.15 (default, Aug 22 2018, 16:41:11) 
     [GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.42.1)] on darwin
     Type 'help', 'copyright', 'credits' or 'license' for more information.
@@ -52,5 +54,6 @@ to be prefixed with a `u` as follows:
     >>> 
     ``` 
  
-    Of course &#x1f6c8; has a decimal value of 128712 which is TOO BIG! So I've settled on using ℹ which has a decimal
-    value of 8505.
+    Of course &#x1f6c8; has a decimal value of 128712 which is TOO BIG! So I've settled on using the 
+    [Information Source](https://www.fileformat.info/info/unicode/char/2139/index.htm) character &#8505;
+    which has a decimal value of 8505.
