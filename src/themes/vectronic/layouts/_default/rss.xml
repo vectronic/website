@@ -24,7 +24,7 @@
             <description>{{ emojify .Content | html }}</description>
             <author>{{ .Site.Params.email }} ({{ .Site.Params.name }})</author>
             {{- range .Params.tags -}}
-                <category domain="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}">{{ .}}</category>
+                <category domain="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ .}}</category>
             {{ end }}
         </item>
         {{ end }}
