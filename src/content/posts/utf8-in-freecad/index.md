@@ -12,7 +12,7 @@ I've been writing a Python macro for FreeCAD as a learning exercise on both subj
 display the [Circled Information Source](https://www.fileformat.info/info/unicode/char/1f6c8/index.htm) unicode character
 as a tooltip icon in a GUI form. It looks like this: &#x1f6c8; (if your current viewing font supports it). 
 
-After attempting this for a couple of hours, I wanted to stop teaching myself Python and head back to Java...
+After attempting this for a couple of hours, I wanted to stop learning Python and head back to Java...
 
 <!--more-->
 
