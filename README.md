@@ -171,14 +171,19 @@ for (i = 0; i < outboundLinks.length; i++) {
 	let outboundLink = outboundLinks[i];
 	if (outboundLink.rel === "external") {
 		outboundLink.onclick = function() {
-			gtag('event', 'click', {
-				'event_category': 'outbound',
-				'event_label': outboundLink.href,
-				'transport_type': 'beacon',
-				'event_callback': function() {
-					document.location = outboundLink.href;
-				}
-			});
+		    if (gtag) {
+                gtag('event', 'click', {
+                    'event_category': 'outbound',
+                    'event_label': outboundLink.href,
+                    'transport_type': 'beacon',
+                    'event_callback': function() {
+                        document.location = outboundLink.href;
+                    }
+                });
+            }
+            else {
+                document.location = outboundLink.href;
+            }
 			return false;
 		}
 	}
