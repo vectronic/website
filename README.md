@@ -171,7 +171,7 @@ for (i = 0; i < outboundLinks.length; i++) {
 	let outboundLink = outboundLinks[i];
 	if (outboundLink.rel === "external") {
 		outboundLink.onclick = function() {
-		    if (gtag) {
+		    if (window.ga && ga.create) {
                 gtag('event', 'click', {
                     'event_category': 'outbound',
                     'event_label': outboundLink.href,
