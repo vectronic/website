@@ -20,11 +20,10 @@ So now I have the following in my macro folder:
 * `Legify` a sub-folder containing the Python module source files
 * `legify-brick.FCMacro` a macro file importing the module as follows:
 
-```
-from Legify import Brick
-
-Brick.Dialog()
-```
+    ```
+    from Legify import Brick
+    Brick.Dialog()
+    ```
 
 This structure can be seen in the [macro repository on GitHub](https://github.com/vectronic/freecad-legify-macros)
        
