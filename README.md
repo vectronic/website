@@ -146,51 +146,6 @@ The value for this can be ascertained from the Netlify URL when navigating to `A
 
 Define a build hook which will be used to automatically rebuild the site when a new comment is approved.
 
-#### Post Processing
-
-Configure the following entry before `</head>` to inject Google analytics:
-
-```
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=<google-analytics-id>"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', '<google-analytics-id>', { 'anonymize_ip': true });
-</script>
-```
-
-Configure the following entry before `</body>` to add Google analytics events for external links: 
-
-```
-<script>
-let outboundLinks = document.getElementsByTagName('a');
-for (i = 0; i < outboundLinks.length; i++) {
-	let outboundLink = outboundLinks[i];
-	if (outboundLink.rel === "external") {
-		outboundLink.onclick = function() {
-		    if (window.ga && ga.create) {
-                gtag('event', 'click', {
-                    'event_category': 'outbound',
-                    'event_label': outboundLink.href,
-                    'transport_type': 'beacon',
-                    'event_callback': function() {
-                        document.location = outboundLink.href;
-                    }
-                });
-            }
-            else {
-                document.location = outboundLink.href;
-            }
-			return false;
-		}
-	}
-}
-</script>
-```
-
 #### Asset Optimization
 
 Configure the following optimizations:

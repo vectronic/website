@@ -7,7 +7,7 @@
                 <div class="p-author h-card d-none">{{ .Site.Params.email }}</div>
             </div>
             {{ if .Params.tags }}
-                <div class="col flex-shrink-2 text-right content-tags">
+                <div class="col-3 text-right content-tags">
                     {{ range sort (.Params.tags) }}
                     <a class="badge tag p-category" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ upper . }}</a>
                     {{ end }}
