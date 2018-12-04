@@ -1,10 +1,10 @@
 [build]
-    command = "hugo && npx netlify-lambda build src/functions"
+    command = "gulp build:comments && hugo && npx netlify-lambda build src/functions"
     publish = "build/public"
     functions = "build/functions"
 
 [context.production]
-    command = "hugo && npx netlify-lambda build src/functions"
+    command = "gulp build:comments && hugo && npx netlify-lambda build src/functions"
     functions = "build/functions"
     [context.production.environment]
         HUGO_VERSION = "0.48"
