@@ -234,6 +234,13 @@ img.brand {
     font-size: medium;
 }
 
+.content-body h4 {
+    font-family: 'IBM Plex Mono Light', monospace;
+    font-size: medium;
+    font-style: italic;
+    color: #6e6c76;
+}
+
 .content-more  {
     padding-top: 0.5em;
 }
