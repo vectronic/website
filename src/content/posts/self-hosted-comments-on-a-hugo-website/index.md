@@ -34,6 +34,8 @@ The source and full configuration instructions are available at:
 
 # Integration Overview
 
+{{< figure src="images/integration-overview.png" width="100%">}}
+
 ## Comment Submission
 
 The following occurs when a user submits a comment via the comment form on a blog post page:
