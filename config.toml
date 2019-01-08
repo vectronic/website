@@ -11,8 +11,8 @@ themesDir = "src/themes"
 publishDir = "build/public"
 dataDir = "build/data"
 pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
 pygmentsStyle = "manni"
-enableGitInfo = true
 
 [taxonomies]
     tag = "tags"
