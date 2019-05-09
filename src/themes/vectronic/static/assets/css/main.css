@@ -46,6 +46,11 @@ a[*|rel~="external"]:not([class="resp-sharing-button__link"])::after {
     padding-left: 0.5em;
 }
 
+figcaption {
+    color: #6e6c76;
+    padding-top: 5px;
+}
+
 .global-nav {
     padding-left: 1.5em;
     padding-top: 1em;
