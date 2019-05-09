@@ -14,7 +14,7 @@
   "dependencies": {
     "dotenv": "^6.2.0",
     "gravatar": "^1.8.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "netlify-lambda": "^0.4.0",
     "request": "^2.88.0"
   },
