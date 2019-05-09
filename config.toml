@@ -10,9 +10,6 @@ staticDir = "src/static"
 themesDir = "src/themes"
 publishDir = "build/public"
 dataDir = "build/data"
-pygmentsCodeFences = true
-pygmentsCodefencesGuessSyntax = true
-pygmentsStyle = "manni"
 
 [taxonomies]
     tag = "tags"
