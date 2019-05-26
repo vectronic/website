@@ -59,12 +59,18 @@ Download and install the latest [driver for macOS](https://www.3dconnexion.co.uk
 	git clone https://github.com/conda-forge/freecad-feedstock
 	cd freecad-feedstock/
 
-#### Build and install FreeCAD
+#### Build FreeCAD
 
 	conda build ./recipe -m ./.ci_support/osx_python3.7.yaml
 
 **NOTE**: I found it wasn't necessary to add `-D FREECAD_USE_3DCONNEXION=ON` to `recipe/build.sh` as the build seemed to pick up the 
 presence of the installed driver and use it by default.
+
+**NOTE**: To modify the version of FreeCAD which is build, edit `recipe/meta.yaml` and change the `version` variable e.g.:
+
+    {% set version = "master" %}
+
+#### Install FreeCAD
 
 	conda install -c file://${CONDA_PREFIX}/conda-bld/ freecad=0.18.1 -y
 
