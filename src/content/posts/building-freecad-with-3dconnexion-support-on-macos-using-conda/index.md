@@ -44,8 +44,8 @@ Download and install the latest [driver for macOS](https://www.3dconnexion.co.uk
 
 #### Link to SDK for Circle CI based support scripts
 
-	mkdir -p /Applications/Xcode-9.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
-	ln -s /opt/MacOSX10.9.sdk /Applications/Xcode-9.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
+	mkdir -p /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
+	ln -s /opt/MacOSX10.9.sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs
 
 #### Prepare Conda environment
 
