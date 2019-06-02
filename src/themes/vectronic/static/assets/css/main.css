@@ -35,15 +35,14 @@ pre {
 }
 
 a[*|rel~="external"]:not([class="resp-sharing-button__link"])::after {
-    display: inline-block;
+    display: inline;
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     font-size: x-small;
     font-family: "Font Awesome 5 Free";
-    content: "\f35d";
-    padding-left: 0.5em;
+    content: "\A0\f35d";
 }
 
 figcaption {
