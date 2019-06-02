@@ -74,7 +74,7 @@ presence of the installed driver and use it by default.
 
 	conda install -c file://${CONDA_PREFIX}/conda-bld/ freecad=0.18.1 -y
 
-**NOTE**: `conda install --use-local freecad=0.18.1` didn't seem to use the locally build package - possibly related to [this reported issue](https://github.com/conda/conda/issues/7024).
+**NOTE**: `conda install --use-local freecad=0.18.1` didn't seem to use the locally built package - possibly related to [this reported issue](https://github.com/conda/conda/issues/7024).
 
 #### Use it!
 
