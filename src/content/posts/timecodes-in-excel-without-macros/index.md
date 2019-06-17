@@ -19,3 +19,5 @@ Googling for "excel timecode" didn't produce any results which met my requiremen
 Because of this, I am pleased to present a solution which does meet the above requirements: 
 
 [https://github.com/vectronic/timecode-spreadsheet](https://github.com/vectronic/timecode-spreadsheet)
+
+<!--more-->
