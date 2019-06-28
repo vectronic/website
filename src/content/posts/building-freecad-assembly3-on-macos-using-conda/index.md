@@ -116,7 +116,7 @@ In the meantime I ignore them as follows:
     install_name_tool -id "_slvs.so" _slvs.so
     install_name_tool -add_rpath "@loader_path/../../../../lib/" _slvs.so
     
-    install_name_tool -change "~/miniconda3/envs/freecad_assembly3_0.9.1/lib/libpython3.7m.dylib" "@rpath/Python" _slvs.so
+    install_name_tool -change "~/miniconda3/envs/freecad_ass3/lib/libpython3.7m.dylib" "@rpath/Python" _slvs.so
     
 **NOTE**: If the last command didn't work as the python library version has changed, run the following to see which library to relink to:
 
