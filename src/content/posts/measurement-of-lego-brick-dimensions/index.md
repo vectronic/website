@@ -21,15 +21,15 @@ I've been making measurements using the following microscopy setup:
 
 Measurements were made using a calibrated scale of 0.1mm:
 
-{{< figure src="images/scale.png" width="80%">}}
+{{< figure src="images/scale.jpg" width="80%">}}
 
 Here is a good example of the usefulness of this approach over measurement by hand with a micrometer:
 
-{{< figure src="images/axle_pin.png" width="80%">}}
+{{< figure src="images/axle_pin.jpg" width="80%">}}
 
 So far, two bricks have been regrettably sacrificed to obtain some internal dimensions:
 
-{{< figure src="images/sacrificial_brick.png" width="80%">}}
+{{< figure src="images/sacrificial_brick.jpg" width="80%">}}
 
 All photos are posted to my [Lego Measurement](https://www.pinterest.co.uk/vectronic/lego-measurement) Pinterest board.
 
