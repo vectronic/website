@@ -159,9 +159,8 @@ Configure the following optimizations:
 
 Configure the following Slack Integrations:
 
-* On deployment failure post to the `vectronic-deployment` app webhook configred in Slack.
-* On deployment success post to the `vectronic-deployment` app webhook configred in Slack. This integration is just to 
-be able to view subscription activity.
+* On deployment failure post to the `vectronic-deployment` app webhook configured in Slack.
+* On deployment success post to the `vectronic-deployment` app webhook configured in Slack.
 
 #### Domain Management
 
@@ -171,8 +170,8 @@ Configuration for Domains and HTTPS is based on standard Netlify instructions.
 
 Configure the following Slack Integrations:
 
-* On `New form submission` to the `contact` form, post to the `vectronic-contact` app webhook configred in Slack.
-* On `New form submission` to the `subscribe` form, post to the `vectronic-subscribe` app webhook configred in Slack. 
+* On `New form submission` to the `contact` form, post to the `vectronic-contact` app webhook configured in Slack.
+* On `New form submission` to the `subscribe` form, post to the `vectronic-subscribe` app webhook configured in Slack. 
 This integration is just to be able to view subscription activity.
 
 Configure the following Outgoing Webhooks:
