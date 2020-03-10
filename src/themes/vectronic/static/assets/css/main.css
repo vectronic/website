@@ -172,7 +172,7 @@ img.brand {
 .content .btn-primary:hover,
 .content .btn-primary:active,
 .content .btn-primary:focus {
-    background-color: #fff;
+    background-color: #fff !important;
     color: #68d6a3 !important;
     border-color: #68d6a3 !important;
 }
