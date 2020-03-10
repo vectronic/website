@@ -12,7 +12,7 @@ This Privacy Policy provides information on when and why your personal informati
 
 ### Contact Form
 
-When you used the contact form, your email and name are collected.
+When you use the contact form, your email and name are collected.
 
 ### Comment Form
 
