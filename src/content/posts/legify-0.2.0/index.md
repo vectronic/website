@@ -1,6 +1,6 @@
 ---
 title: Legify 0.2.0
-date: 2029-03-15
+date: 2020-03-15
 tags: 
 - legify
 - python
