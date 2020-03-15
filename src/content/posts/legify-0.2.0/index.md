@@ -9,11 +9,11 @@ tags:
 
 ---
 
-`v0.2.0` which, is the latest and most likely last version is available at:
+The latest and most likely last version of Legify is available at:
 
 [https://github.com/vectronic/freecad-legify-macros/releases/tag/v0.2.0](https://github.com/vectronic/freecad-legify-macros/releases/tag/v0.2.0)
 
-I've ticked off my planned aims with this project, which were to:
+I've achieved my goals with this project, which were to:
 
 * Get to grips with FreeCAD and parametric modelling concepts: sketches, constraints, datum planes etc.
 * Learn Python and use it for FreeCAD scripting
