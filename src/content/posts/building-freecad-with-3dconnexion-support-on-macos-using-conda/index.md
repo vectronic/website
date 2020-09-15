@@ -26,10 +26,12 @@ Download and install the latest [driver for macOS](https://www.3dconnexion.co.uk
 
 #### Install miniconda
 
+NOTE: Replace `<home>` below with your home directory e.g. `/Users/vectronic` or possibly `$HOME`.
+ 
 	curl -L -O https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 	bash Miniconda3-latest-MacOSX-x86_64.sh -b
 	rm Miniconda3-latest-MacOSX-x86_64.sh 
-	echo ". /Users/vectronic/miniconda3/etc/profile.d/conda.sh" >> ~/.bash_profile
+	echo ". <home>/miniconda3/etc/profile.d/conda.sh" >> ~/.bash_profile
 
 #### Install MacOSX10.9.sdk
 
