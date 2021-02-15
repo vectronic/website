@@ -15,6 +15,8 @@ the [Render Workbench](https://github.com/FreeCAD/FreeCAD-render) (with renderin
 
 If you use a [3DConnextion SpaceMouse](https://www.3dconnexion.co.uk/spacemouse_wireless/uk/) I can report these steps will produce a build which supports it.
 
+<!--more-->
+
 The steps below are based on [my initial post](https://vectronic.io/posts/building-freecad-with-3dconnexion-support-on-macos-using-conda/) but updated to support the latest version of FreeCAD 0.19 and Big Sur
 and to incorporate my further understanding of how this all works. Credit also goes to useful information from
 DrVAX's [blog post](https://drvax.com/freecad-pre-releases-on-macos/) and many contributions on this [forum thread](https://forum.freecadweb.org/viewtopic.php?f=4&t=51345).
@@ -131,24 +133,23 @@ Start FreeCAD:
 
 ##### Install Assembly4 using Extension Manager Workbench
 
-1. Go to *View -> Workbench -> Extension Manager*.
+1. Go to *View->Workbench->Extension Manager*.
 1. Select *Add (Download)* and then *Addons*.
 1. Look in the *Assembly* section for *Assembly4* and click *Install*.
 1. Confirm *Install*.
 
 ##### Install Render Workbench using Extension Manager Workbench
 
-1. Go to *View -> Workbench -> Extension Manager*.
-1. Select *Add (Download)* and then *Addons*.
+1. Go back to *Add (Download)* and then *Addons*.
 1. Look in the *Uncategorized* section for *Render* and click *Install*.
 1. Confirm *Install*.
 
-Restart FreeCAD
+Restart FreeCAD.
 
 #### Configure Render Workbench to use Cycles
 
-1. Load the Render workbench: *View -> Workbench -> Render*.
-1. Configure the render workbench via *freecad -> Preferences -> Render* and set:
+1. Load the Render workbench: *View->Workbench->Render* (this might hang for a bit...).
+1. Configure the render workbench via *freecad->Preferences->Render* and set:
     * *Cycles executable path* to `cycles`
     * *Render parameters* to `--samples 500 --background`
 
@@ -157,15 +158,15 @@ Restart FreeCAD
 1. Download this [sample part design model](models/brick_4x2.FCStd) and open it in FreeCAD.
 1. Create a render project via *Render->Cycles Project* and selecting the `cycles_sunlight.xml` file.
 1. Change the *Angular Deflection* data property of the Cycles Project from `0.52` to `0.1`.
-1. In the tree navigation, select the *body->top_studs_inside_pocket* AND the *Cycles Project*.
+1. In the tree navigation, select the *brick->top_studs_inside_pocket* AND the *Cycles Project*.
 1. Create a render view via *Render->Create View*.
 1. Ensure the view is set to perspective via *View->Perspective View*.
 1. Select the *Cycles Project* in the tree navigation.
-1. Render via *Render->Render*.
+1. Render via *Render->Render* (this will hang for a bit... you can see progress in the terminal where you launched FreeCAD).
 
 You should end up with a rendered image similar to this:
 
-{{< figure src="images/bricks.png">}}
+{{< figure src="images/brick_4x2.png">}}
 
 #### Test Assembly4 model render
 
@@ -176,7 +177,7 @@ You should end up with a rendered image similar to this:
 1. Create a render view via *Render->Create View*.
 1. Ensure the view is set to perspective via *View->Perspective View*.
 1. Select the *Cycles Project* in the tree navigation.
-1. Render via *Render->Render*.
+1. Render via *Render->Render* (this will hang for a bit... you can see progress in the terminal where you launched FreeCAD).
 
 You should end up with a rendered image similar to this:
 
