@@ -6,10 +6,10 @@
                 <nav class="navbar navbar-expand p-0">
                     <ul class="navbar-nav flex-wrap">
                         <li class="nav-item pr-2">
-                            <a class="nav-link {{ if eq .Dir "archives/" }} active {{ end }}" href="/archives/">All</a>
+                            <a class="nav-link {{ if eq .File.Dir "archives/" }} active {{ end }}" href="/archives/">All</a>
                         </li>
                         <li class="nav-item nav-link pr-3">|</li>
-                        {{ $dir := .Dir }}
+                        {{ $dir := .File.Dir }}
                         {{ with .Site.GetPage "section" "posts" }}
                             <!-- Mon Jan 2 15:04:05 -0700 MST 2006 -->
                             {{ range .Data.Pages.GroupByDate "2006" }}

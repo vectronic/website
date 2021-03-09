@@ -1,5 +1,5 @@
 {{ if .Site.Data.comments }}
-    {{ $commentsForPage := index .Site.Data.comments .URL }}
+    {{ $commentsForPage := index .Site.Data.comments .Permalink }}
     {{ if $commentsForPage }}
         <div class="row justify-content-center content-title pt-5">
             <div class="offset-1 col-11 col-lg-8 col-xl-8">
@@ -58,7 +58,7 @@
     <div class="row justify-content-center content-body">
         <div class="col-3 col-lg-2 col-xl-2">
             <input class="d-none" name="callsign">
-            <input name="path" type="hidden" value="{{ .URL }}">
+            <input name="path" type="hidden" value="{{ .Permalink }}">
             <label for="validationCustom01">First Name</label>
             <input name="first_name" type="text" class="form-control" id="validationCustom01" required>
             <div class="invalid-feedback">Please provide a first name.</div>
