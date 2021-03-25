@@ -9,7 +9,7 @@ require('dotenv').config();
 // delete this submission via the api
 function purgeComment(id) {
     let url = `https://api.netlify.com/api/v1/submissions/${id}?access_token=${process.env.NETLIFY_API_AUTH}`;
-    request.delete(url, function(err, response, body) {
+    request.delete(url, function(err) {
         if (err) {
             return console.log(err);
         }
@@ -72,7 +72,7 @@ exports.handler = function(event, context, callback) {
                 console.log(payload);
 
                 // post the comment to the approved lost
-                request.post({'url':approvedURL, 'formData': payload }, function(err, httpResponse, body) {
+                request.post({'url':approvedURL, 'formData': payload }, function(err) {
                     let msg;
                     if (err) {
                         msg = 'Post to approved comments failed:' + err;

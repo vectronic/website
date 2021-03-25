@@ -177,11 +177,11 @@ This integration is just to be able to view subscription activity.
 Configure the following Outgoing Webhooks:
 
 * On `New form submission` to the `subscribe` form, post to the `subscription` function passing the shared secret 
-configured in Nelify e.g. 
+configured in Netlify e.g. 
 
         https://vectronic.netlify.com/.netlify/functions/subscription?VECTRONIC_FUNCTION_AUTH=<shared_secret>
 * On `New form submission` to the `pending-comments` form, post to the `comment-submitted` function passing the shared 
-secret configured in Nelify e.g. 
+secret configured in Netlify e.g. 
 
         https://vectronic.netlify.com/.netlify/functions/comment-submitted?VECTRONIC_FUNCTION_AUTH=<shared_secret>
 * On `New form submission` to the `approved-comments` form, post to the build hook configured in Netlify.

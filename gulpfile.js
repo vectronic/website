@@ -3,7 +3,7 @@ let request  = require("request");
 let gravatar = require('gravatar');
 let fs       = require('fs');
 
-var buildDest = "build";
+const buildDest = "build";
 
 gulp.task("build:comments", function (done) {
 
