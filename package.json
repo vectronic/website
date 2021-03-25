@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "npm run build:comments && npm run build:hugo && npm run build:functions",
-    "build:comments": "gulp build:comments",
+    "build:comments": "npx gulp build:comments",
     "build:hugo": "hugo --ignoreCache",
     "build:functions": "npx netlify-lambda build src/functions",
     "watch": "npm run build:comments && npm-run-all --parallel watch:hugo watch:functions",
