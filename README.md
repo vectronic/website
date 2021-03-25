@@ -1,5 +1,7 @@
 # website
-Vectronic website
+> Vectronic website
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6365e376-61b1-4e26-b32b-34a462d3fae1/deploy-status)](https://app.netlify.com/sites/vectronic/deploys)
 
 ## Environment Setup
 
