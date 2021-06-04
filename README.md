@@ -143,6 +143,7 @@ The following need to be defined:
 * `SENDINBLUE_API_AUTH` - API key configured in SendInBlue.
 * `SENDINBLUE_LIST_ID` - ID of a contact list configured in SendInBlue.
 * `VECTRONIC_FUNCTION_AUTH` - This can be any shared secret key. It is used to prevent public access to the Netlify Functions.
+* `GIT_LFS_ENABLED` - set to `true`
 
 #### Build Hooks
 
