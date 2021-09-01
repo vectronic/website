@@ -9,7 +9,7 @@ tags:
 
 ---
 
-I've been developing a FreeCAD macro for a while with the following aims:
+I've been developing a [FreeCAD](https://www.freecadweb.org) macro for a while with the following aims:
 
 * Get to grips with FreeCAD and parametric modelling concepts: sketches, constraints, datum planes etc.
 * Learn Python and use it for FreeCAD scripting
