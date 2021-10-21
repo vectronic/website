@@ -13,7 +13,7 @@ I reached a milestone last weekend with a successful render of a brick assembly 
 
 <!--more-->
 
-All brick models were created the legify macro code available at:
+All brick models were created with the legify macro code available at:
 
 [https://github.com/vectronic/freecad-legify-macros](https://github.com/vectronic/freecad-legify-macros)
 
