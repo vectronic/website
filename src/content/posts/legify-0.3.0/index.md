@@ -22,6 +22,8 @@ The latest macro code, brief overview and instructions are available at:
 
 [https://github.com/vectronic/freecad-legify-macros](https://github.com/vectronic/freecad-legify-macros)
 
+**NOTE**: Be aware that due to this [bug in FreeCAD](https://tracker.freecad.org/view.php?id=4781) discovered while implementing technic pin support,
+multiple technic pins will not render correctly at the moment.
 
 {{< figure src="images/brick_2x1_front_pin_1_of_2.png" link="images/brick_2x1_front_pin_1_of_2.pdf" width="50%">}}
 
