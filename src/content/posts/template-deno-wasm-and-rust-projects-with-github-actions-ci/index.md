@@ -54,23 +54,23 @@ Before getting into details (and the inevitable pain points), some of the featur
 
 The GitHub repositories involved in this effort are as follows:
 
-#### "Application" Projects
+### "Application" Projects
 
 * [flowscripter/template-deno-executable](https://github.com/flowscripter/template-deno-executable): Project template for a Deno executable.
 * [flowscripter/template-deno-webapp](https://github.com/flowscripter/template-deno-webapp): Project template for a Deno based webapp with Deno and Rust based WASM library dependencies.
 
-#### "Simple Library" Projects
+### "Simple Library" Projects
 
 * [flowscripter/template-deno-library](https://github.com/flowscripter/template-deno-library): Project template for a Deno library.
 * [flowscripter/template-rust-library](https://github.com/flowscripter/template-rust-library): Project template for a Rust library.
 
-#### "Glue Library" Projects
+### "Glue Library" Projects
 
 * [flowscripter/template-deno-rust-library](https://github.com/flowscripter/template-deno-rust-library): Project template for a Rust library with Deno FFI bindings.
 * [flowscripter/template-wasm-rust-library](https://github.com/flowscripter/template-wasm-rust-library): Project template for a Rust library compiled to WASM.
 * [flowscripter/template-deno-wasm-rust-library](https://github.com/flowscripter/template-deno-wasm-rust-library): Project template for a Rust library compiled to WASM exposed as a Deno module.
 
-#### "CI" Projects
+### "CI" Projects
 
 * [flowscripter/.github](https://github.com/flowscripter/.github): GitHub Actions and Workflow Templates
 
@@ -87,7 +87,7 @@ Click on it to open in a larger form.
 
 Beyond some outstanding issues outlined further below, there were a few things I discovered which are worth noting:
 
-#### .github v1 branch
+### .github v1 branch
 
 As far as I am aware, the best approach to managing versioning of GitHub Actions in your own `.github` repository without publishing them
 is to use branches for versioning.
@@ -98,7 +98,7 @@ As an example, the reference to the Action `release_deno_library` in the [templa
 
 `flowscripter/.github/actions/release-deno-library@v1`
 
-#### GitHub Pages to host WASM library releases
+### GitHub Pages to host WASM library releases
 
 I used GitHub Pages to host a demo of the webapp.
 
@@ -108,7 +108,7 @@ I also ended up using it as a poor-man's "artifact repository" for hosting pure 
 * These require opting back into the NodeJS+NPM package ecosystem (something I was trying to opt OUT OF by using Deno)
 * It seemed there was nothing available which supported serving WASM files with the mime-type expected by Deno when it fetches WASM files within the modules created with [wasm-pack](https://github.com/rustwasm/wasm-pack).
 
-#### Reliance on Node and NPM
+### Reliance on Node and NPM
 
 The [semantic-release](https://semantic-release.gitbook.io/semantic-release/) project is excellent.
 However it is written using Node and NPM. I'd love to find GitHub Actions which fully wrap this functionality or a
@@ -122,7 +122,7 @@ Therefore, as part of releasing a WASM compiled library to GitHub pages, I need 
 
 The fact that this is a workaround for publishing to GitHub Pages which is in itself a workaround for hosting WASM library releases really does bite...
 
-#### Git Update of Main Branch
+### Git Update of Main Branch
 
 I wanted to apply branch permissions for ALL users, including administrators of the repositories. 
 
@@ -132,7 +132,7 @@ To achieve this, I needed the GitHub Action to be able to push directly to the `
 
 Thus I needed a Personal Access Token which will **only** work if administrators (i.e. myself) ARE NOT included in branch permissions...
 
-#### Bleeding Edge
+### Bleeding Edge
 
 Whilst writing this blog entry, the Actions making use of [deno_bindgen](https://github.com/denoland/deno_bindgen) stopped working due to this issue:
 
@@ -144,12 +144,12 @@ If you play with unstable APIs you're gonna get hurt...
 
 The items I discovered which are blockers for my stated aims are as follows:
 
-#### Dynamic Import of WASM based Javascript Modules
+### Dynamic Import of WASM based Javascript Modules
 
 As far as I can tell, I can't use dynamic imports (i.e. the [Javascript import() function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import)) with WASM based Javascript Modules 
 until this is implemented: https://github.com/denoland/deno/issues/2552
 
-#### Deno Compile support for dynamic imports
+### Deno Compile support for dynamic imports
 
 Deno supports:
 
@@ -158,21 +158,21 @@ Deno supports:
 
 However it doesn't support both of these at the same time: https://github.com/denoland/deno/issues/8655 `(>_<)`
 
-#### deno_bindgen updated to support the latest unstable Deno API
+### deno_bindgen updated to support the latest unstable Deno API
 
 I mentioned this earlier as a downside to being on the bleeding edge: https://github.com/denoland/deno_bindgen/issues/80
 
-#### Automatic Rust API docs for projects using `deno_bindgen`
+### Automatic Rust API docs for projects using `deno_bindgen`
 
 Glue technologies like [deno_bindgen](https://github.com/denoland/deno_bindgen/issues/72) are excellent, however I seem to be 'stuck' with this: https://github.com/denoland/deno_bindgen/issues/72
 
 Without a change here, my automatically generated docs at https://docs.rs will continue to throw a [massive error](https://docs.rs/crate/flowscripter_template_deno_rust_library/1.0.6/builds/556217).
 
-#### Deno signing and notarisation support
+### Deno signing and notarisation support
 
 It's not great delivering a single binary executable if the OS is reticent to run it... https://github.com/denoland/deno/issues/11154
 
-#### GitHub Actions support for Apple Silicon
+### GitHub Actions support for Apple Silicon
 
 Not major, but until this is available I can't fully implement cross-platform CI: https://github.com/actions/virtual-environments/issues/2187
 
