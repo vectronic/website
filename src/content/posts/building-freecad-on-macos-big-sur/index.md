@@ -4,7 +4,8 @@ date: 2021-02-15
 tags: 
 - freecad
 - tip
-
+aliases:
+    - /posts/building-fre ... s-big-sur/
 ---
 
 Presented here is a somewhat terse step-by-step guide to installing a working version of
