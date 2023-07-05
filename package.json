@@ -6,19 +6,14 @@
     "build": "npm run build:comments && npm run build:hugo && npm run build:functions",
     "build:comments": "npx gulp build:comments",
     "build:hugo": "hugo --ignoreCache",
-    "build:functions": "npx -c 'NODE_OPTIONS=--openssl-legacy-provider netlify-lambda build src/functions'",
-    "watch": "npm run build:comments && npm-run-all --parallel watch:hugo watch:functions",
-    "watch:hugo": "hugo --disableFastRender --ignoreCache --watch server",
-    "watch:functions": "npx -c 'NODE_OPTIONS=--openssl-legacy-provider netlify-lambda serve src/functions'"
+    "build:functions": "netlify build",
+    "watch": "npm run build:comments && hugo --disableFastRender --ignoreCache --watch server"
   },
   "dependencies": {
     "dotenv": "16.3.1",
     "gravatar": "1.8.2",
     "gulp": "4.0.2",
-    "netlify-lambda": "2.0.16",
+    "netlify-cli": "^10.14.0",
     "request": "2.88.2"
-  },
-  "devDependencies": {
-    "npm-run-all": "4.1.5"
   }
 }

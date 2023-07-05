@@ -12,6 +12,8 @@ Working from the root of the project, install required software (assuming MacOS)
 ```
 brew install hugo
 npm install
+npm install netlify-cli -g
+netlify link
 ```
 
 ## Development
