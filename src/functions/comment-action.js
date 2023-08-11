@@ -1,6 +1,6 @@
 'use strict';
 
-let request = require("request");
+let needle = require("needle");
 
 // populate environment variables locally.
 require('dotenv').config();
@@ -9,7 +9,7 @@ require('dotenv').config();
 // delete this submission via the api
 function purgeComment(id) {
     let url = `https://api.netlify.com/api/v1/submissions/${id}?access_token=${process.env.NETLIFY_API_AUTH}`;
-    request.delete(url, function(err) {
+    needle.delete(url, null, null, function(err) {
         if (err) {
             return console.log(err);
         }
@@ -52,9 +52,9 @@ exports.handler = function(event, context, callback) {
 
         console.log("Getting from", url);
 
-        request(url, function(err, response, body) {
+        needle.get(url, function(err, response) {
             if (!err && response.statusCode === 200) {
-                let data = JSON.parse(body).data;
+                let data = response.body.data;
 
                 // now we have the data, let's massage it and post it to the approved form
                 let payload = {
@@ -72,7 +72,7 @@ exports.handler = function(event, context, callback) {
                 console.log(payload);
 
                 // post the comment to the approved lost
-                request.post({'url':approvedURL, 'formData': payload }, function(err) {
+                needle.post(approvedURL, payload, function(err) {
                     let msg;
                     if (err) {
                         msg = 'Post to approved comments failed:' + err;

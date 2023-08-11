@@ -1,5 +1,5 @@
 let gulp     = require("gulp");
-let request  = require("request");
+let needle   = require("needle");
 let gravatar = require('gravatar');
 let fs       = require('fs');
 
@@ -21,13 +21,13 @@ gulp.task("build:comments", function (done) {
 
     let commentsUrl = `https://api.netlify.com/api/v1/forms/${process.env.NETLIFY_APPROVED_COMMENTS_FORM_ID}/submissions/?access_token=${process.env.NETLIFY_API_AUTH}`;
 
-    request(commentsUrl, function(err, response, body) {
+    needle.get(commentsUrl, function(err, response) {
 
         if (!err && response.statusCode === 200) {
 
             let comments = {};
 
-            for (let item of JSON.parse(body)) {
+            for (let item of response.body) {
 
                 let comment = {
                     first_name: item.data.first_name,

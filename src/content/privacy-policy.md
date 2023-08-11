@@ -18,10 +18,6 @@ When you use the contact form, your email and name are collected.
 
 When you comment on a post, your email and name are collected.
 
-### Subscription Form
-
-When you subscribe to be emailed posts from the site, your email and name are collected.
-
 ## Information Usage
 
 ### Contact Processing
@@ -35,12 +31,6 @@ Your email address and name will never be shared.
 Your comment data will be processed using [Slack](https://slack.com) and [Netlify](https://www.netlify.com). 
 Both of these services have implemented all necessary standards to comply with GDPR. 
 If your comment is accepted it will appear on this website with your name (and not your email address). 
-
-### Subscription Processing
-
-Your email and name data will be processed using [Slack](https://slack.com), [Netlify](https://www.netlify.com) and [SendInBlue](https://www.sendinblue.com). 
-All of these services have implemented all necessary standards to comply with GDPR. 
-Your email address and name will never be shared.
 
 ## Cookies
 

@@ -52,13 +52,13 @@ exports.handler = function(event, context, callback) {
     };
 
     // post the notification to Slack
-    request.post({url:slackURL, json: slackPayload}, function(err, httpResponse, body) {
+    request.post(slackURL, slackPayload, function(err, httpResponse) {
         let msg;
         if (err) {
             msg = 'Post to Slack failed:' + err;
         }
         else {
-            msg = 'Post to Slack successful!  Server responded with:' + body;
+            msg = 'Post to Slack successful!  Server responded with:' + httpResponse.body;
         }
         callback(null, {
             statusCode: 200,

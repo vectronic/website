@@ -7,5 +7,5 @@
     command = "gulp build:comments && hugo"
     functions = "build/functions"
     [context.production.environment]
-        HUGO_VERSION = "0.81.0"
+        HUGO_VERSION = "0.115.1"
         HUGO_ENV = "production"
