@@ -35,5 +35,5 @@ Not sure how the difference in templates crept in...
 
 And assembly animation for the win `\(^ヮ^)/`
 
-{{< movie src="movies/brick_assembly_animation.mp4" width="50%">}}
+{{< movie src="movies/brick_assembly_animation.mp4" poster="images/brick_assembly_animation.jpg" width="50%">}}
 
