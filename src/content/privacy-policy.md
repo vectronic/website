@@ -2,7 +2,7 @@
 title: "Privacy Policy"
 layout: "default"
 ---
-<em>Last Modification: 24 September 2018</em>
+*Last Modification: 24 September 2018*
 
 This Privacy Policy provides information on when and why your personal information is collected, how it is used and how it is kept secure. If there are any questions regarding this Privacy Policy you can contact me by email:
 

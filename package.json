@@ -3,20 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "npm run build:comments && npm run build:hugo && npm run build:functions",
-    "build:comments": "npx gulp build:comments",
-    "build:hugo": "hugo --ignoreCache",
-    "build:functions": "netlify build",
-    "watch": "npm run build:comments && hugo --disableFastRender --ignoreCache --watch server"
-  },
-  "dependencies": {
-    "dotenv": "16.3.1",
-    "gravatar": "1.8.2",
-    "gulp": "4.0.2",
-    "needle": "3.2.0",
-    "netlify-cli": "16.0.2"
-  },
-  "overrides": {
-    "graceful-fs": "^4.2.11"
+    "build": "hugo --ignoreCache",
+    "watch": "hugo --disableFastRender --ignoreCache --watch server"
   }
 }

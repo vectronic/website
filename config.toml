@@ -4,12 +4,14 @@ languageCode = "en-gb"
 enableRobotsTXT = true
 theme = "vectronic"
 sectionPagesMenu = "global"
-paginate = 15
 contentDir = "src/content"
 staticDir = "src/static"
 themesDir = "src/themes"
 publishDir = "build/public"
 dataDir = "build/data"
+
+[pagination]
+    pagerSize = 15
 
 [taxonomies]
     tag = "tags"
@@ -31,3 +33,6 @@ dataDir = "build/data"
     name       = "Archives"
     url        = "/archives/"
     weight     = 1
+
+[markup.goldmark.renderer]
+    unsafe = true
