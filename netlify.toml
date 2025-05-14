@@ -1,11 +1,9 @@
 [build]
-    command = "gulp build:comments && hugo"
+    command = "hugo"
     publish = "build/public"
-    functions = "build/functions"
 
 [context.production]
-    command = "gulp build:comments && hugo"
-    functions = "build/functions"
+    command = "hugo"
     [context.production.environment]
-        HUGO_VERSION = "0.115.1"
+        HUGO_VERSION = "0.146.4"
         HUGO_ENV = "production"

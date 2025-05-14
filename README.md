@@ -11,12 +11,18 @@ Working from the root of the project, install required software (assuming MacOS)
 
 ```
 brew install hugo
+npm install netlify-cli -g
+netlify link
 ```
 
 ## Development
 
 `npm run build`
 
-or
+or:
+
+`netlify build`
+
+or:
 
 `npm run watch`
