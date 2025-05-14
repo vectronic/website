@@ -386,6 +386,10 @@ img.brand {
     --color-social-reaction-bg-reacted-hover: #68d6a3;
 }
 
+main {
+    background-color: #ffffff;
+}
+
 .gsc-main {
     font-family: 'Routed Gothic', sans-serif;
     font-size: small;
@@ -415,6 +419,14 @@ img.brand {
 }
 
 .gsc-loading {
+  background-color: #ffffff;
+}
+
+.gsc-loading-image {
+  background-color: #ffffff;
+}
+
+.gsc-loading-image {
   background-color: #ffffff;
 }
 
