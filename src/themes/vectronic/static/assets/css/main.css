@@ -240,14 +240,41 @@ img.brand {
     font-size: small;
 }
 
+.gsc-main {
+    font-family: 'Routed Gothic', sans-serif;
+    font-size: small;
+}
+
+.gsc-left-header em {
+    visibility: hidden;
+}
+
+.gsc-reactions-count {
+    text-align: left;
+}
+
+.gsc-reactions div {
+    margin-left: 6px;
+    justify-content: left;
+}
+
+.gsc-reactions-popover {
+    background-color: #ffffff;
+}
+
+:root {
+    --color-border-default: #e9ecef;
+    --color-btn-primary-disabled-border: #e9ecef;
+    --color-btn-primary-hover-border: #e9ecef;
+    --color-btn-primary-border: #e9ecef;
+    --color-accent-muted: #e9ecef;
+    --color-box-border-info: #e9ecef;
+}
+
 .content-more  {
     padding-top: 0.5em;
 }
-
-.comments {
-    list-style-type: none;
-}
-
+    
 .avatar {
     height: 3em;
 }

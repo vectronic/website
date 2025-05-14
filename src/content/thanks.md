@@ -2,4 +2,4 @@
 title: "Thanks"
 layout: "default"
 ---
-Thanks for your submission, it will now be processed.
+Thanks for making contact, I'll get back to you.
