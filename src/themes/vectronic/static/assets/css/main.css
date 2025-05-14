@@ -371,11 +371,13 @@ img.brand {
     --color-btn-primary-border: #e9ecef;
     --color-accent-muted: #e9ecef;
     --color-box-border-info: #e9ecef;
+    --color-fg-default: #333;
 }
 
 .gsc-main {
     font-family: 'Routed Gothic', sans-serif;
     font-size: small;
+    background-color: #fff;
 }
 
 .gsc-left-header em {
@@ -386,7 +388,7 @@ img.brand {
     text-align: left;
 }
 
-.gsc-reactions div {
+.gsc-reactions div.justify-center {
     margin-left: 6px;
     justify-content: left;
 }
