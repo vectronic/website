@@ -27,7 +27,7 @@ body {
     --color-accent-muted: #e9ecef;
     --color-box-border-info: #e9ecef;
     --color-fg-default: #333;
-    --color-btn-hover-border: #768390;
+    --color-btn-hover-border: #68d6a3;
     --color-btn-primary-hover-border: #68d6a3;
     --color-action-list-item-default-hover-bg: #68d6a3;
     --color-social-reaction-bg-hover: #68d6a3;
@@ -44,10 +44,24 @@ body {
     color: #68d6a3;
 }
 
-.gsc-main button:not(.btn):hover,
-.gsc-main button:not(.btn):active {
+.gsc-main .fsc-reactions-button:hover {
+     color: #68d6a3;
+}
+
+.gsc-main button:hover,
+.gsc-main button:active {
     color: #68d6a3;
     border-color: #68d6a3;
+}
+
+.gsc-main .btn-primary:hover {
+    color: #68d6a3;
+}
+
+.gsc-main .gsc-right-header button:hover,
+.gsc-main .gsc-right-header button:active {
+    color: inherit;
+    border-color: inherit;
 }
 
 .gsc-left-header em {
