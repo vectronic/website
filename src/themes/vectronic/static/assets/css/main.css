@@ -1,5 +1,19 @@
+@font-face {
+    font-family: 'Routed Gothic';
+    src: url('../font/routed-gothic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Routed Gothic';
+    src: url('../font/routed-gothic-italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
 body {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Routed Gothic', sans-serif;
     font-size: small;
     background-color: #111;
     color: #c3c6cc;
