@@ -395,9 +395,16 @@ img.brand {
     text-align: left;
 }
 
+.gsc-homepage-bg {
+  background-color: #ffffff;
+}
+
+.justify-center {
+    justify-content: left;
+}
+
 .gsc-reactions div.justify-center {
     margin-left: 6px;
-    justify-content: left;
 }
 
 .gsc-reactions-popover {
