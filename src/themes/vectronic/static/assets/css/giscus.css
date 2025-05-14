@@ -45,16 +45,16 @@ body {
 }
 
 .gsc-main .fsc-reactions-button:hover {
-     color: #68d6a3;
+     fill: #68d6a3; 
 }
 
-.gsc-main button:hover,
-.gsc-main button:active {
+.gsc-main button:hover:not(:disabled),
+.gsc-main button:active:not(:disabled) {
     color: #68d6a3;
     border-color: #68d6a3;
 }
 
-.gsc-main .btn-primary:hover {
+.gsc-main .btn-primary:hover:not(:disabled) {
     color: #68d6a3;
 }
 
