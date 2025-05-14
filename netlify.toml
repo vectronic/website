@@ -9,6 +9,6 @@
         HUGO_ENV = "production"
 
 [[headers]]
-  for = "/assets/css/main.css"
+  for = "/assets/css/giscus.css"
     [headers.values]
     Access-Control-Allow-Origin = "https://giscus.app"
