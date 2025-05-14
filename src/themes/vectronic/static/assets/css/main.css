@@ -364,6 +364,13 @@ img.brand {
     fill: #ff6600;
 }
 
+.giscus {
+    background-color: #ffffff;
+}
+
+.giscus-frame {
+    background-color: #ffffff;
+}
 :root {
     --color-border-default: #e9ecef;
     --color-btn-primary-disabled-border: #e9ecef;
