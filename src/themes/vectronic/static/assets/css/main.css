@@ -386,18 +386,19 @@ img.brand {
     --color-social-reaction-bg-reacted-hover: #68d6a3;
 }
 
-main {
+#__next {
     background-color: #ffffff;
 }
 
 .gsc-main {
     font-family: 'Routed Gothic', sans-serif;
     font-size: small;
-    background-color: #fff;
 }
 
 .gsc-main a:hover,
-.gsc-main a:active {
+.gsc-main a:active,
+.gsc-main button:hover,
+.gsc-main button:active {
     color: #68d6a3;
 }
 
@@ -412,26 +413,6 @@ main {
 
 .gsc-comments-count {
     font-weight: 400;
-}
-
-.gsc-homepage-bg {
-  background-color: #ffffff;
-}
-
-.gsc-loading {
-  background-color: #ffffff;
-}
-
-.gsc-loading-image {
-  background-color: #ffffff;
-}
-
-.gsc-loading-image {
-  background-color: #ffffff;
-}
-
-.pagination-loader-container {
-  background-color: #ffffff;
 }
 
 #__next .gsc-reactions div.justify-center {
