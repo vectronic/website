@@ -24,7 +24,7 @@ Here is a video showing initial connection and navigating to some adult content 
 
 Apart from soldering some raw wires onto the French phone plug, the Minitel terminal remains unmodified:
 
-{{< figure src="images/connector.jpg" width="50%">}}
+{{< figure src="images/connector.jpg" width="30%">}}
 
 Most of the work to get this up and running was covered in this excellent blog entry: [Building a Standalone Softmodem Enabled PABX
 ](https://glasstty.com/building-a-standalone-softmodem-enabled-pabx/) 🙏
