@@ -21,6 +21,7 @@ body {
 }
 
 :root {
+    --color-btn-border: #e9ecef;
     --color-border-default: #e9ecef;
     --color-btn-primary-disabled-border: #e9ecef;
     --color-btn-primary-border: #e9ecef;
@@ -44,8 +45,9 @@ body {
     color: #68d6a3;
 }
 
-.gsc-main .fsc-reactions-button:hover {
-     fill: #68d6a3; 
+.gsc-main .octicon-smiley:hover,
+.gsc-main .octicon-smiley:active {
+     color: #68d6a3; 
 }
 
 .gsc-main button:hover:not(:disabled),
@@ -85,3 +87,4 @@ body {
 .gsc-reactions-popover {
     background-color: #ffffff;
 }
+
