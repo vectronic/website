@@ -12,9 +12,13 @@
   for = "/assets/css/giscus.css"
     [headers.values]
     Access-Control-Allow-Origin = "https://giscus.app"
+
+[[headers]]
   for = "/assets/font/routed-gothic.ttf"
     [headers.values]
     Access-Control-Allow-Origin = "https://giscus.app"
+
+[[headers]]
   for = "/assets/font/routed-gothic-italic.ttf"
     [headers.values]
     Access-Control-Allow-Origin = "https://giscus.app"
