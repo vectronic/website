@@ -1,6 +1,6 @@
 {{ $pag := $.Paginator }}
 {{ if gt $pag.TotalPages 1 }}
-    {{ $.Scratch.Set "dot_rendered" false }}
+    {{ $.Store.Set "dot_rendered" false }}
     <div class="container-fluid page-nav">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-9 col-xl-9 p-0">
@@ -19,10 +19,10 @@
                         {{ if eq . $pag }} <!-- Current Page -->
                         <li class="page-item active"><a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a></li>
                         {{ else if and (ge .PageNumber (sub $pag.PageNumber 2)) (le .PageNumber (add $pag.PageNumber 2)) }}
-                        {{ $.Scratch.Set "dot_rendered" false }} <!-- Render prev 2 page and next 2 pages -->
+                        {{ $.Store.Set "dot_rendered" false }} <!-- Render prev 2 page and next 2 pages -->
                         <li class="page-item"><a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a></li>
-                        {{ else if eq ($.Scratch.Get "dot_rendered") false }} <!-- render skip pages -->
-                        {{ $.Scratch.Set "dot_rendered" true }}
+                        {{ else if eq ($.Store.Get "dot_rendered") false }} <!-- render skip pages -->
+                        {{ $.Store.Set "dot_rendered" true }}
                         <li class="page-item disabled"><a class="page-link">...</a></li>
                         {{ end }}
                         {{ end }}

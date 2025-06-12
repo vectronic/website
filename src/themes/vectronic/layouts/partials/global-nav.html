@@ -14,14 +14,14 @@
                         {{ $currentNode := . }}
                         {{ range first 1 (sort (where .Site.Menus.global "Name" "ne" "Posts") "Weight") }}
                             <li class="nav-item">
-                                <a class="nav-link{{if or ($currentNode.IsMenuCurrent "global" .) ($currentNode.HasMenuCurrent "global" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a>
+                                <a class="nav-link" href="{{.URL}}">{{ .Name }}</a>
                             </li>
                         {{ end }}
 
                         {{ $currentNode := . }}
                         {{ range last (sub (len .Site.Menus.global) 2) (sort (where .Site.Menus.global "Name" "ne" "Posts") "Weight") }}
                             <li class="nav-item pl-4">
-                                <a class="nav-link{{if or ($currentNode.IsMenuCurrent "global" .) ($currentNode.HasMenuCurrent "global" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a>
+                                <a class="nav-link" href="{{.URL}}">{{ .Name }}</a>
                             </li>
                         {{ end }}
                     </ul>

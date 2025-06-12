@@ -1,5 +1,5 @@
 {{ define "main" }}
-    {{ .Scratch.Set "pages" (where (where .Site.Pages "Section" "posts") ".IsPage" true) }}
+    {{ .Store.Set "pages" (where (where .Site.Pages "Section" "posts") ".IsPage" true) }}
     {{ partial "posts.html" . }}
 {{ end }}
 

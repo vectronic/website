@@ -1,9 +1,9 @@
-{{ $pages := .Scratch.Get "pages" }}
+{{ $pages := .Store.Get "pages" }}
 {{ if eq $pages nil }}
     {{ $pages := where (where .Site.Pages "Section" "posts") ".IsPage" true }}
-    {{ .Scratch.Set "pages" $pages}}
+    {{ .Store.Set "pages" $pages}}
 {{ end }}
-{{ $pages := .Scratch.Get "pages" }}
+{{ $pages := .Store.Get "pages" }}
 {{ $paginator := .Paginate $pages }}
 <div class="container-fluid content">
     {{ range $paginator.Pages }}

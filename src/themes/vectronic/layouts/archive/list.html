@@ -1,5 +1,5 @@
 {{ define "main" }}
-    {{ $scratch := .Scratch }}
+    {{ $store := .Store }}
     <div class="container-fluid sub-nav sticky-top">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-9 col-xl-9 p-0">
@@ -16,7 +16,7 @@
                                 <li class="nav-item pr-2">
                                     <a class="nav-link
                                     {{ if (eq $dir (printf "archives/%s/" .Key)) }}
-                                        {{ $scratch.Set "filter" .Key}}
+                                        {{ $store.Set "filter" .Key}}
                                         active
                                     {{ end }}
                                     " href="/archives/{{ .Key }}">{{ .Key }}</a>
@@ -28,10 +28,10 @@
             </div>
         </div>
     </div>
-    {{ .Scratch.Set "pages" (where (where .Site.Pages "Section" "posts") ".IsPage" true) }}
-    {{ $filter := (.Scratch.Get "filter") }}
+    {{ .Store.Set "pages" (where (where .Site.Pages "Section" "posts") ".IsPage" true) }}
+    {{ $filter := (.Store.Get "filter") }}
     {{ if ne $filter nil }}
-        {{ .Scratch.Set "pages" (where (.Scratch.Get "pages") "Date.Year" (int $filter)) }}
+        {{ .Store.Set "pages" (where (.Store.Get "pages") "Date.Year" (int $filter)) }}
     {{ end }}
     {{ partial "posts.html" . }}
 {{ end }}

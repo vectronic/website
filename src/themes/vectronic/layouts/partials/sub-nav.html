@@ -1,13 +1,14 @@
-{{ $scratch := .Scratch }}
+{{ $store := .Store }}
 <div class="container-fluid sub-nav sticky-top">
     <div class="row justify-content-center">
         <div class="col-12 col-lg-9 col-xl-9 p-0">
             <nav class="navbar navbar-expand p-0">
-                {{ $taxonomy := .Scratch.Get "taxonomy" }}
-                {{ $taxonomyName := .Scratch.Get "taxonomyName" }}
+                {{ $taxonomy := .Store.Get "taxonomy" }}
+                {{ $taxonomyName := .Store.Get "taxonomyName" }}
+                {{ $currentNode := . }}
                 <ul class="navbar-nav flex-wrap">
                     <li class="nav-item pr-2">
-                        <a class="nav-link {{ if eq $.Kind "taxonomyTerm" }} active {{ end }}" href="/{{ $taxonomyName }}/">All</a>
+                        <a class="nav-link {{if eq $currentNode.Path "/tags" }} active{{end}}" href="/tags/">All</a>
                     </li>
                     <li class="nav-item nav-link pr-3">|</li>
                     {{ $title := .Title }}
@@ -15,7 +16,7 @@
                         <li class="nav-item pr-2">
                             <a class="nav-link
                                 {{ if eq (urlize $title) $name }}
-                                    {{ $scratch.Set "filter" $name}}
+                                    {{ $store.Set "filter" $name}}
                                     active
                                 {{ end }}
                                 " href="/{{ $taxonomyName }}/{{ $name | urlize }}">{{ humanize $name }}</a>
@@ -26,8 +27,8 @@
         </div>
     </div>
 </div>
-{{ .Scratch.Set "pages" (where (where .Site.Pages "Section" "posts") ".IsPage" true) }}
-{{ $filter := (.Scratch.Get "filter") }}
+{{ .Store.Set "pages" (where (where .Site.Pages "Section" "posts") ".IsPage" true) }}
+{{ $filter := (.Store.Get "filter") }}
 {{ if ne $filter nil }}
-    {{ .Scratch.Set "pages" (where (.Scratch.Get "pages") "Params.tags" "intersect" (slice $filter)) }}
+    {{ .Store.Set "pages" (where (.Store.Get "pages") "Params.tags" "intersect" (slice $filter)) }}
 {{ end }}
