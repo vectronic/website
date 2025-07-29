@@ -1,5 +1,5 @@
 ---
-title: Rust, WASM and Deno projects with GitHub Actions
+title: Deno, WASM and Rust projects with GitHub Actions
 date: 2022-07-05
 tags:
 - deno
