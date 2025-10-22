@@ -3,6 +3,7 @@ title: First Real Project on the Pocket NC
 date: 2025-10-21
 tags: 
 - cnc
+- fusion360
 
 ---
 
