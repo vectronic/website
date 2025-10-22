@@ -31,4 +31,4 @@ Next steps:
 
 * third attempt at the tutorial
 * probably a second run at the sample cube piece tutorial now that I am setup in the enclosure with video recording
-* integration of the [Vers Wireless Touch Probe](https://vers.ge/en/blog/user-guides/wlr-v8) which seems to have had some [further activity](https://community.pentamachine.com/t/using-josh-pieper-probe-with-fusion-360/453/23).* 
+* integration of the [Vers Wireless Touch Probe](https://vers.ge/en/blog/user-guides/wlr-v8) which seems to have had some [further activity](https://community.pentamachine.com/t/using-josh-pieper-probe-with-fusion-360/453/23).
