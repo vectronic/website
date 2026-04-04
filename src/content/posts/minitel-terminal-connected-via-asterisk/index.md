@@ -43,6 +43,15 @@ Now I need to find an idea of what to connect this thing to rather than just loc
 
 ### Further Details and Notes
 
+**UPDATE: April 4th 2026**
+
+There is now a Docker image of this available: `vectronic/asterisk-minitel`
+
+See source and instructions at: https://github.com/vectronic/asterisk-minitel-docker
+
+This is build on Linux instead of Ubuntu thus avoiding patches below and the PR for `minitel-server` has been merged upstream
+so all in all things are a lot simpler.
+
 **Asterisk 18 and Softmodem Installation**
 
 In a FreeBSD jail:
