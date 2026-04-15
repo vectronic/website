@@ -17,7 +17,6 @@
                 <feMergeNode in="tight" />
                 <feMergeNode in="tight" />
                 <feMergeNode in="tight" />
-                <feMergeNode in="tight" />
                 <feMergeNode in="SourceGraphic" />
             </feMerge>
         </filter>
@@ -34,7 +33,7 @@
                     draw 0.7s ease-out forwards,
                     brighten 0.8s ease-out forwards;
 
-                animation-delay: calc(var(--i) * 0.2s + 0.2s);
+                animation-delay: calc(var(--i) * 0.15s + 0.2s);
             }
 
             @keyframes draw {
@@ -42,8 +41,8 @@
             }
 
             @keyframes brighten {
-                0% { filter: url(#flash); }
-                100% { filter: url(#glow); }
+                0% { filter: url(#flash); stroke: #b6d6c7;}
+                100% { filter: url(#glow); stroke: #68d6a3; }
             }
         </style>
 
