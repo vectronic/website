@@ -373,3 +373,11 @@ img.brand {
   width: 100%;
   height: 100%;
 }
+/* highlighted code blocks: light panel (colours from syntax.css, hugo gen chromastyles --style=github) */
+.highlight pre.chroma {
+    background-color: #f0f4f8;
+    color: #24292f;
+    border-radius: 4px;
+    padding: 10px 14px;
+    overflow-x: auto;
+}

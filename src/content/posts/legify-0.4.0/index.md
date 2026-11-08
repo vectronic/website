@@ -14,6 +14,6 @@ A new feature release version of Legify is available at:
 
 This provides a new `legify-technic-pin` macro which renders a technic pin onto an existing Part Design workbench body.
 
-Therefore the "s" in the name of the project "freecad-legify-macros" now has real meaning! :stuck_out_tongue_winking_eye:
+Therefore the "s" in the name of the project "freecad-legify-macros" now has real meaning! 😜
 
 <!--more-->

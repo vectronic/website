@@ -36,3 +36,6 @@ dataDir = "build/data"
 
 [markup.goldmark.renderer]
     unsafe = true
+
+[markup.highlight]
+    noClasses = false

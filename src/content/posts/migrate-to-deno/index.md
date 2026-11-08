@@ -49,11 +49,11 @@ However, since then, time has passed (mostly working on the toolchain issues men
 
 It's tempting. Let's review given the initially stated Flowscripter goals and the current concerns for the Node.js based implementation:
 
-- TypeScript :white_check_mark:
-- ES Modules :white_check_mark:
-- [Rust plugins](https://github.com/keroxp/deno_plugin_example) :white_check_mark:
-- [Compiled executables](https://deno.land/manual/tools/compiler#compiling-executables) :white_check_mark:
-- [Simple dependency mechanism](https://deno.land/manual#comparison-to-nodejs) :white_check_mark:
+- TypeScript ✅
+- ES Modules ✅
+- [Rust plugins](https://github.com/keroxp/deno_plugin_example) ✅
+- [Compiled executables](https://deno.land/manual/tools/compiler#compiling-executables) ✅
+- [Simple dependency mechanism](https://deno.land/manual#comparison-to-nodejs) ✅
 
 Additionally, the support for importing a module from a URL would (hopefully) completely obviate the need for [esm-dynamic-plugins](https://github.com/flowscripter/esm-dynamic-plugins) to implement
 separate a `UrlPluginRepository.ts` and `NodeModulesPluginRepository.ts`.

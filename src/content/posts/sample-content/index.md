@@ -7,7 +7,7 @@ Here is an image:
 
 {{< figure src="images/screenshot1.png" caption="This is a caption" width="60%">}}
 
-I :heart: emoji!
+I ❤️ emoji!
 
 # Heading Level 1
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non neque odio. 

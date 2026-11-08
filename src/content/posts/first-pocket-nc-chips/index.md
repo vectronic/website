@@ -15,4 +15,4 @@ Here is short video showing the chips flying when following the excellent [First
 {{< movie src="movies/pocket-nc.mp4" poster="images/pocket-nc.jpg" width="50%">}}
 
 
-After many years being consumed by software I am now back straddling software and hardware :heart:
+After many years being consumed by software I am now back straddling software and hardware ❤️
